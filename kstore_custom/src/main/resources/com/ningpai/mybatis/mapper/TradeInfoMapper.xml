@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ningpai.customer.dao.TradeInfoMapper">
+
+    <!-- 交易记录表映射 -->
+    <resultMap type="com.ningpai.customer.bean.TradeInfo" id="TradeInfoMap">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="customer_id" property="customerId" jdbcType="BIGINT"/>
+        <result column="customer_username" jdbcType="VARCHAR" property="customerUsername"/>
+        <result column="order_code" property="orderCode" jdbcType="VARCHAR"/>
+        <result column="order_type" property="orderType" jdbcType="VARCHAR"/>
+        <result column="order_status" property="orderStatus" jdbcType="VARCHAR"/>
+        <result column="order_price" property="orderPrice" jdbcType="DECIMAL"/>
+        <result column="current_price" property="currentPrice" jdbcType="DECIMAL"/>
+        <result column="trade_remark" property="tradeRemark" jdbcType="VARCHAR"/>
+        <result column="del_flag" property="delFlag" jdbcType="CHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_person" property="createPerson" jdbcType="BIGINT"/>
+        <result column="pay_bill_num" property="payBillNum" jdbcType="VARCHAR"/>
+        <result column="reviewed_remark" property="reviewedRemark" jdbcType="VARCHAR"/>
+        <result column="certificate_img" property="certificateImg" jdbcType="VARCHAR"/>
+        <result column="trade_source" property="tradeSource" jdbcType="VARCHAR"/>
+        <result column="income" property="income" jdbcType="DECIMAL"/>
+        <result column="cost" property="cost" jdbcType="DECIMAL"/>
+    </resultMap>
+    <!-- 会员资金列表总数用于分页 -->
+    <select id="selectTotalTradeInfo" resultType="java.lang.Long" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+          count(t.id)
+        from np_trade_info t
+        left join np_customer c on t.customer_id = c.customer_id
+        where t.del_flag = '0'
+        <if test="customerId != null and customerId != ''">
+            and t.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="orderType != null and orderType != ''">
+            and t.order_type = #{orderType,jdbcType=VARCHAR}
+        </if>
+        <if test="orderStatus != null and orderStatus != ''">
+            and t.order_status = #{orderStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="orderCode != null and orderCode != ''">
+            and t.order_code like CONCAT(CONCAT('%', #{orderCode,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND t.create_time &gt;= #{startDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND t.create_time &lt;= #{endDate}
+        </if>
+    </select>
+    <!-- 高级查询 会员资金列表查询 -->
+    <select id="selectTradeInfoList" resultMap="TradeInfoMap" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+            t.id,
+            t.customer_id,
+            c.customer_username,
+            t.order_type,
+            t.create_time,
+            case when t.order_type = '0' or t.order_type = '1' then t.order_price else 0 end as income,
+            case when t.order_type = '2' or t.order_type = '3' then t.order_price else 0 end as cost,
+            t.order_price,
+            t.order_status,
+            t.current_price,
+            t.order_code
+        from np_trade_info t
+        left join np_customer c on t.customer_id = c.customer_id
+        where t.del_flag = '0'
+        <if test="tradeInfoId != null and tradeInfoId != ''">
+            and t.id = #{tradeInfoId,jdbcType=BIGINT}
+        </if>
+        <if test="customerId != null and customerId != ''">
+            and t.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="orderType != null and orderType != ''">
+            and t.order_type = #{orderType,jdbcType=VARCHAR}
+        </if>
+        <if test="orderStatus != null and orderStatus != ''">
+            and t.order_status = #{orderStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="orderCode != null and orderCode != ''">
+            and t.order_code like CONCAT(CONCAT('%', #{orderCode,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND t.create_time &gt;= #{startDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND t.create_time &lt;= #{endDate}
+        </if>
+        order by t.create_time desc
+        limit #{startRowNum},#{endRowNum}
+    </select>
+    <!--增加交易信息记录-->
+    <insert id="insertTradeInfo" parameterType="com.ningpai.customer.bean.TradeInfo" >
+        insert into np_trade_info
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="customerId != null and customerId != ''" >
+                customer_id,
+            </if>
+            <if test="orderCode != null and orderCode != ''" >
+                order_code,
+            </if>
+            <if test="orderType != null" >
+                order_type,
+            </if>
+            <if test="orderStatus != null" >
+                order_status,
+            </if>
+            <if test="orderPrice != null" >
+                order_price,
+            </if>
+            <if test="currentPrice != null" >
+                current_price,
+            </if>
+            <if test="tradeRemark != null" >
+                trade_remark,
+            </if>
+            <if test="updateTime != null" >
+                update_time,
+            </if>
+            <if test="delFlag != null" >
+                del_flag,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="createPerson != null" >
+                create_person,
+            </if>
+            <if test="reviewedRemark != null" >
+                reviewed_remark,
+            </if>
+            <if test="certificateImg != null" >
+                certificate_img,
+            </if>
+            <if test="payBillNum != null" >
+                pay_bill_num,
+            </if>
+            <if test="tradeSource != null" >
+                trade_source,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="customerId != null" >
+                #{customerId,jdbcType=BIGINT},
+            </if>
+            <if test="orderCode != null" >
+                #{orderCode,jdbcType=VARCHAR},
+            </if>
+            <if test="orderType != null" >
+                #{orderType,jdbcType=VARCHAR},
+            </if>
+            <if test="orderStatus != null" >
+                #{orderStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="orderPrice != null" >
+                #{orderPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="currentPrice != null" >
+                #{currentPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="tradeRemark != null" >
+                #{tradeRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null" >
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="delFlag != null" >
+                #{delFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createPerson != null" >
+                #{createPerson,jdbcType=BIGINT},
+            </if>
+            <if test="reviewedRemark != null" >
+                #{reviewedRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="certificateImg != null" >
+                #{certificateImg,jdbcType=VARCHAR},
+            </if>
+            <if test="payBillNum != null" >
+                #{payBillNum,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeSource != null" >
+                #{tradeSource,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <!--修改提现交易的状态-->
+    <update id="batchUpdateTradeInfo" parameterType="com.ningpai.customer.bean.TradeInfo">
+        UPDATE np_trade_info t
+        SET
+          t.order_status = #{orderStatus,jdbcType=VARCHAR},
+          t.reviewed_remark = #{reviewedRemark,jdbcType=VARCHAR},
+          t.update_time = #{updateTime,jdbcType=TIMESTAMP},
+          t.trade_source = #{tradeSource,jdbcType=VARCHAR}
+        WHERE
+          t.order_status = '0'
+          and t.id in
+            <foreach item="item" index="index" collection="tradeInfoIds" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+    </update>
+    <update id="updateTradeInfo" parameterType="com.ningpai.customer.bean.TradeInfo">
+        update np_trade_info t
+        <set>
+            <if test="orderStatus != null and orderStatus != ''">
+                t.order_status = #{orderStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="reviewedRemark != null and reviewedRemark != ''">
+                t.reviewed_remark = #{reviewedRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                t.update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createPerson != null and createPerson != ''">
+                t.create_person = #{createPerson,jdbcType=BIGINT},
+            </if>
+            <if test="certificateImg != null and certificateImg != ''">
+                t.certificate_img = #{certificateImg,jdbcType=VARCHAR},
+            </if>
+            <if test="payBillNum != null and payBillNum != ''">
+                t.pay_bill_num = #{payBillNum,jdbcType=VARCHAR},
+            </if>
+            <if test="tradeSource != null and tradeSource != ''">
+                t.trade_source = #{tradeSource,jdbcType=VARCHAR},
+            </if>
+            <if test="payRemark != null and payRemark != ''">
+                t.pay_remark = #{payRemark,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where 1=1
+        <if test="tradeInfoIds != null">
+            AND t.id IN
+            <foreach item="item" index="index" collection="tradeInfoIds" open="(" separator="," close=")">
+              #{item}
+            </foreach>
+        </if>
+        <if test="preOrderStatus != null and preOrderStatus != ''">
+            and t.order_status = #{preOrderStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="id != null and id != ''">
+            and t.id = #{id,jdbcType=BIGINT}
+        </if>
+    </update>
+    <!---->
+
+</mapper>

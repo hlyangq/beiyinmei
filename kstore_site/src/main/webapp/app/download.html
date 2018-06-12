@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>福气商城 B2B2C APP</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="wrap">
+    <div class="header">
+        <h1 class="title">福气商城</h1>
+        <h2 class="sec-title">B2B2C APP</h2>
+        <p class="description">帮助企业打造生态级的"互联网+"商业平台</p>
+        <p class="description">用手机访问福气商城,</p>
+        <p class="description">安装客户端,让购物更加轻松</p>
+    </div>
+    <!--<div class="download-box">
+        <p class="download-title">官方市场下载客户端</p>
+        <a href="javascript:;" class="ios-download"><i></i>iOS版本</a>
+        <a href="javascript:;" class="android-download"><i></i>Android版本</a>
+    </div>-->
+
+    <div class="tip_dialog">
+        <div class="tip">
+            <p>1.点击右上角 <img class="dots" src="./css/dots.png" alt=""> 按钮</p>
+            <p>2.选择“在浏览器中打开”下载App</p>
+        </div>
+        <div class="close_box">
+            <a href="javascript:;" class="close_btn">我知道了</a>
+        </div>
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        var os = function () {
+            var ua = navigator.userAgent,
+                    isWeixin = /(?:micromessenger)/.test(ua.toLowerCase()),
+                    isQB = /(?:MQQBrowser|QQ)/.test(ua),
+                    isWindowsPhone = /(?:Windows Phone)/.test(ua),
+                    isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+                    isAndroid = /(?:Android)/.test(ua),
+                    isFireFox = /(?:Firefox)/.test(ua),
+                    isChrome = /(?:Chrome|CriOS)/.test(ua),
+                    isIpad = /(?:iPad|PlayBook)/.test(ua),
+                    isTablet = /(?:iPad|PlayBook)/.test(ua) || (isFireFox && /(?:Tablet)/.test(ua)),
+                    isSafari = /(?:Safari)/.test(ua),
+                    isIPhone = /(?:iPhone)/.test(ua) && !isTablet,
+                    isOpen = /(?:Opera Mini)/.test(ua),
+                    isUC = /(?:UCWEB|UCBrowser)/.test(ua),
+                    isPc = !isIPhone && !isAndroid && !isSymbian;
+            return {
+                isWeixin: isWeixin,
+                isQB: isQB,
+                isTablet: isTablet,
+                isIPhone: isIPhone,
+                isAndroid: isAndroid,
+                isPc: isPc,
+                isOpen: isOpen,
+                isUC: isUC,
+                isIpad: isIpad
+            };
+        }();
+
+        var iosUrl = 'itms-services://?action=download-manifest&url=https://cashier.qianmi.com/appgen/Kstore/Kstore-online.plist';
+        var android = 'https://cashier.qianmi.com/appgen/Kstore/KstoreApp-online-latest.apk';
+
+        var downURL = os.isIPhone ? iosUrl : android;
+
+        if(os.isWeixin) {
+            $('.tip_dialog').show();
+        } else if (os.isIPhone) {
+            window.location.href = downURL;
+        } else if(os.isAndroid) {
+            window.location.href = downURL;
+        } else {
+            alert("请用IOS或者Android系统下载");
+        };
+
+        $('.close_btn').click(function(){
+            $('.tip_dialog').hide();
+        });
+    </script>
+</body>
+</html>

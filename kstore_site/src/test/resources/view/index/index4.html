@@ -1,0 +1,55 @@
+    <div id="wrapper">        
+        <div id="content">
+            <div class="section-01">
+                <div id="slides">                    
+                </div>
+                <div class="content">
+                    <div class="news">
+                        <div class="notice-news">
+                            <div class="tit">                               
+                                <h3>公告</h3>
+                                <a class="more" href="javascript:;">更多&gt;&gt;</a>
+                            </div>
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hot-promotion">
+                        <ul>
+                        </ul>
+                        <a class="pm-prev"></a>
+                        <a class="pm-next"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-02">
+                <div class="jp-recommend">
+                    <h2>精品推荐</h2>
+                    <div class="rc-box">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pp-recommend">
+                    <h2>品牌推荐</h2>
+                    <div class="rc-box">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+<script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_four/images/lazy_img.png",
+				skip_invisible: false
+			});
+});
+</script>

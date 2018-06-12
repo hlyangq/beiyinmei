@@ -1,0 +1,67 @@
+ <input type="hidden" id="isIndex" value="1"/>
+    <div id="wrapper">        
+        <div id="content">
+            <div class="section-01">
+                <div class="show-box">
+                    <div id="slides">
+                    </div>
+                    <div id="proScroll">
+                        <div class="jscroll-wp">
+                            <ul>
+                            </ul>
+                        </div>
+                        <a class="j-prev" href="javascript:;"></a>
+                        <a class="j-next" href="javascript:;"></a>
+                    </div>
+                </div><!--show-box -->
+
+                <div class="right">
+                    <div class="service-information">
+                        <div class="title">服务信息</div>
+                       <!-- <div class="info-02"><a href="javascript:;"><img alt="" src="../images/images_06.jpg"/></a></div>-->
+                    </div>
+                    <div class="mall-news">
+                        <div class="title">
+                            <h4>公告</h4>
+                            <a class="more" href="information/list/">更多&gt;&gt;</a>
+                        </div>
+                        <div class="cont">
+                            <ul class="mall-news-list">
+                            </ul>
+                        </div><!--cont-->
+                    </div><!-mall-news-->
+                </div><!--right-->
+            </div><!--section-01-->
+
+            <div class="section-02">
+                <div class="hot-recommend">
+                </div>
+            </div><!--section-02-->
+            
+        </div><!--content-->
+    </div><!--wrapper-->
+
+
+    <div class="sideBar">
+        <a class="sideItem" href="#proLists01">1F</a>
+        <a class="sideItem" href="#proLists02">2F</a>
+        <a class="sideItem" href="#proLists03">3F</a>
+        <a class="sideItem" href="#proLists04">4F</a>
+        <a id="backtoTop" href="javascript:;"></a>
+    </div>
+    
+ <script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_six/images/lazy_img.png",
+				skip_invisible: false
+			});
+});
+
+
+
+</script>

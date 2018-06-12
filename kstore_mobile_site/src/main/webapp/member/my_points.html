@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 我的积分</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="../js/jquery-1.10.1.js"></script>
+  <script src="../js/idangerous.swiper.js"></script>
+</head>
+<body>
+<div class="my_balance member_box">
+  <div class="cover">
+    <h2>129.30</h2>
+    <p>当前积分</p>
+  </div>
+</div>
+
+<div class="income_details member_box">
+  <h2>收支明细</h2>
+  <div class="tabs row">
+    <a href="#" class="active">全部</a>
+    <a href="#">收入</a>
+    <a href="#">支出</a>
+  </div>
+
+  <div class="content-slide">
+    <div class="income_list">
+      <div class="income_item">
+        <dl>
+          <dt><span>订单支出</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">-4.78</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>充值</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">+100.00</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>订单支出</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">-4.78</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>充值</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">+100.00</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>订单支出</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">-4.78</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>充值</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">+100.00</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>订单支出</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">-4.78</span></dd>
+        </dl>
+      </div>
+      <div class="income_item">
+        <dl>
+          <dt><span>充值</span></dt>
+          <dd><span class="light">2015-09-12 15:22</span></dd>
+        </dl>
+        <dl>
+          <dt><span class="light">余额：152.70</span></dt>
+          <dd><span class="red">+100.00</span></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bar-bottom">
+  <a class="bar-item" href="../home.html"><i class="bar-bottom-i home"></i>首页</a>
+  <a class="bar-item" href="../class.html"><i class="bar-bottom-i class"></i>分类</a>
+  <a class="bar-item" href="../cart.html"><i class="bar-bottom-i cart"></i>购物车</a>
+  <a class="bar-item selected" href="main.html"><i class="bar-bottom-i mine"></i>我的</a>
+</div>
+
+<script>
+
+  /* 滑到筛选标签到顶部后，把标签固定在顶部 */
+  $(window).scroll(function(){
+
+    if($(this).scrollTop() >= 168){
+      $('.income_details .tabs').css({
+        position : 'fixed',
+        width : '100%',
+        left : '0',
+        top : '0'
+      });
+      $('.income_details .content-slide').css('marginTop','45px');
+    }
+    else{
+      $('.income_details .tabs').css({
+        position : 'static'
+      });
+      $('.income_details .content-slide').css('marginTop','0');
+    }
+    if($(this).scrollTop() >= ($('body').height() - $(window).height() + 60)){
+      alert('tobottom');
+    }
+
+  });
+
+
+</script>
+</body>
+</html>

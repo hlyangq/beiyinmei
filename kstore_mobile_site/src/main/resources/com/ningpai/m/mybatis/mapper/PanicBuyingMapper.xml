@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.m.panicbuying.dao.PanicBuyingDao">
+
+
+    <resultMap id="BaseResultMap" type="com.ningpai.channel.bean.ChannelAdver" >
+        <id column="channel_adver_id" property="channelAdverId" jdbcType="BIGINT" />
+        <result column="channel_id" property="channelId" jdbcType="BIGINT" />
+        <result column="temp_id" property="tempId" jdbcType="BIGINT" />
+        <result column="floor_id" property="floorId" jdbcType="BIGINT" />
+        <result column="floor_tag_id" property="floorTagId" jdbcType="BIGINT" />
+        <result column="adver_name" property="adverName" jdbcType="VARCHAR" />
+        <result column="adver_path" property="adverPath" jdbcType="VARCHAR" />
+        <result column="adver_href" property="adverHref" jdbcType="VARCHAR" />
+        <result column="at_id" property="atId" jdbcType="BIGINT" />
+        <result column="adver_sort" property="adverSort" jdbcType="INTEGER" />
+        <result column="adver_type" property="adverType" jdbcType="BIGINT" />
+        <result column="user_status" property="userStatus" jdbcType="CHAR" />
+        <result column="des" property="des" jdbcType="VARCHAR" />
+        <result column="delflag" property="delflag" jdbcType="CHAR" />
+        <result column="create_user_id" property="createUserId" jdbcType="BIGINT" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="update_user_id" property="updateUserId" jdbcType="BIGINT" />
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="temp1" property="temp1" jdbcType="VARCHAR" />
+        <result column="temp2" property="temp2" jdbcType="VARCHAR" />
+        <result column="temp3" property="temp3" jdbcType="VARCHAR" />
+        <result column="temp4" property="temp4" jdbcType="VARCHAR" />
+        <result column="temp5" property="temp5" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <resultMap type="com.ningpai.m.goods.vo.GoodsProductVo" id="MarketingRushResultMap">
+        <id column="goods_info_id" property="goodsInfoId" jdbcType="BIGINT" />
+        <result column="goods_info_item_no" property="goodsInfoItemNo" jdbcType="VARCHAR" />
+        <result column="goods_info_name" property="productName" jdbcType="VARCHAR"/>
+        <result column="goods_info_subtitle" property="subtitle" jdbcType="VARCHAR"/>
+        <result column="goods_info_added" property="goodsInfoAdded" jdbcType="CHAR" />
+        <result column="goods_info_stock" property="goodsInfoStock" jdbcType="BIGINT" />
+        <result column="goods_info_prefer_price" property="goodsInfoPreferPrice" jdbcType="DECIMAL" />
+        <result column="goods_info_cost_price" property="goodsInfoCostPrice" jdbcType="DECIMAL" />
+        <result column="goods_info_market_price" property="goodsInfoMarketPrice" jdbcType="DECIMAL" />
+        <result column="goods_info_weight" property="goodsInfoWeight" jdbcType="DECIMAL" />
+        <result column="goods_info_img_id" property="goodsInfoImgId" jdbcType="VARCHAR" />
+        <result column="goods_info_delflag" property="goodsInfoDelflag" jdbcType="CHAR" />
+        <result column="third_id" property="thirdId" jdbcType="BIGINT" />
+        <result column="is_third" property="isThird" jdbcType="CHAR" />
+        <result column="third_name" property="thirdName" jdbcType="VARCHAR" />
+        <result column="marketing_id" property="marketingId" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <!-- 查询参与抢购的货品 -->
+    <select id="queryGoodsProductVos"  resultMap="MarketingRushResultMap" >
+        SELECT
+        goods_info_id,
+        info.goods_id,
+        goods_info_item_no,
+        goods_info_name,
+        goods_info_subtitle,
+        goods_info_added,
+        goods_info_added_time,
+        goods_info_stock,
+        goods_info_prefer_price,
+        goods_info_cost_price,
+        goods_info_market_price,
+        goods_info_weight,
+        goods_info_img_id,
+        goods_info_create_name,
+        goods_info_create_time,
+        goods_info_modified_name,
+        goods_info_modified_time,
+        goods_info_del_name,
+        goods_info_del_time,
+        goods_info_delflag,
+        mar.marketing_id
+        FROM
+        np_goods_info info,
+        np_goods goods,
+        np_marketing_scope scope,
+        np_marketing mar
+        WHERE
+        info.goods_id = goods.goods_id
+        AND
+        scope.scope_id = info.goods_info_id
+        and mar.marketing_id = scope.marketing_id
+        AND goods_delflag = '0'
+        AND goods.goods_added = '1'
+        AND info.goods_info_delflag = '0'
+        AND info.goods_info_added = '1'
+        AND mar.flag = '0'
+        AND scope.flag = '0'
+        AND mar.m_group_id = 5
+        <![CDATA[  AND DATE_ADD(NOW(), INTERVAL 1 DAY)  >= mar.marketing_begin AND DATE_ADD(mar.marketing_end, INTERVAL 1 DAY) >=NOW() ]]>
+        GROUP BY
+        info.goods_info_id
+    </select>
+    <!-- 查询抢购广告-->
+    <select id="queryChannelAdvers" resultMap="BaseResultMap">
+        select * from np_channel_adver  where delflag = '0' and temp5 = '10' and user_status = '1'  order by adver_sort
+    </select>
+</mapper>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.goods.dao.ArrivalNoticeMapper" >
+  <resultMap id="BaseResultMap" type="com.ningpai.goods.bean.ArrivalNotice" >
+    <id column="notice_id" property="noticeId" jdbcType="BIGINT" />
+    <result column="goods_info_id" property="goodsInfoId" jdbcType="BIGINT" />
+    <result column="info_mobile" property="infoMobile" jdbcType="VARCHAR" />
+    <result column="info_email" property="infoEmail" jdbcType="VARCHAR" />
+    <result column="notice_sturts" property="noticeSturts" jdbcType="CHAR" />
+    <result column="ware_id" property="wareId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    notice_id, goods_info_id, info_mobile, info_email, notice_sturts, ware_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from np_goods_arrival_notice
+    where notice_id = #{noticeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from np_goods_arrival_notice
+    where notice_id = #{noticeId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ningpai.goods.bean.ArrivalNotice" >
+    insert into np_goods_arrival_notice (notice_id, goods_info_id, info_mobile, 
+      info_email, notice_sturts, ware_id)
+    values (#{noticeId,jdbcType=BIGINT}, #{goodsInfoId,jdbcType=BIGINT}, #{infoMobile,jdbcType=VARCHAR}, 
+      #{infoEmail,jdbcType=VARCHAR}, #{noticeSturts,jdbcType=CHAR}), #{wareId,jdbcType=BIGINT}
+  </insert>
+  <insert id="insertSelective" parameterType="com.ningpai.goods.bean.ArrivalNotice" >
+    insert into np_goods_arrival_notice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        notice_id,
+      </if>
+      <if test="goodsInfoId != null" >
+        goods_info_id,
+      </if>
+      <if test="infoMobile != null" >
+        info_mobile,
+      </if>
+      <if test="infoEmail != null" >
+        info_email,
+      </if>
+      <if test="noticeSturts != null" >
+        notice_sturts,
+      </if>
+      <if test="wareId != null" >
+        ware_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        #{noticeId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsInfoId != null" >
+        #{goodsInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="infoMobile != null" >
+        #{infoMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="infoEmail != null" >
+        #{infoEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeSturts != null" >
+        #{noticeSturts,jdbcType=CHAR},
+      </if>
+        <if test="wareId != null" >
+            #{wareId,jdbcType=BIGINT},
+        </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ningpai.goods.bean.ArrivalNotice" >
+    update np_goods_arrival_notice
+    <set >
+      <if test="goodsInfoId != null" >
+        goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="infoMobile != null" >
+        info_mobile = #{infoMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="infoEmail != null" >
+        info_email = #{infoEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeSturts != null" >
+        notice_sturts = #{noticeSturts,jdbcType=CHAR},
+      </if>
+        <if test="wareId != null" >
+            ware_id = #{wareId,jdbcType=BIGINT},
+        </if>
+    </set>
+    where notice_id = #{noticeId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ningpai.goods.bean.ArrivalNotice" >
+    update np_goods_arrival_notice
+    set goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
+      info_mobile = #{infoMobile,jdbcType=VARCHAR},
+      info_email = #{infoEmail,jdbcType=VARCHAR},
+      notice_sturts = #{noticeSturts,jdbcType=CHAR},
+      ware_id = #{wareId,jdbcType=BIGINT}
+    where notice_id = #{noticeId,jdbcType=BIGINT}
+  </update>
+
+    <!-- 检测手机是否登记 -->
+    <select id="slelctArrivalNotice" parameterType="java.util.Map" resultType="java.lang.Long">
+        select
+        count(1)
+        from np_goods_arrival_notice
+        where
+        <if test="noticeSturts != null and noticeSturts!=''">
+            notice_sturts = #{noticeSturts}
+        </if>
+        <if test="goodsInfoId != null and goodsInfoId!=''">
+            AND goods_info_id = #{goodsInfoId}
+        </if>
+        <if test="infoMobile != null and infoMobile!=''">
+            AND info_mobile = #{infoMobile}
+        </if>
+        <if test="infoEmail != null and infoEmail!=''">
+            AND info_email = #{infoEmail}
+        </if>
+        <if test="wareId != null and wareId!=''">
+            AND ware_id = #{wareId}
+        </if>
+    </select>
+
+    <!-- 查询到货通知-->
+    <select id="slelctGoodsInfoIdArrivalNotice" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from np_goods_arrival_notice
+        where
+        <if test="noticeSturts != null and noticeSturts!=''">
+            notice_sturts = #{noticeSturts}
+        </if>
+        <if test="goodsInfoId != null and goodsInfoId!=''">
+            AND goods_info_id = #{goodsInfoId}
+        </if>
+        <if test="infoMobile != null and infoMobile!=''">
+            AND info_mobile = #{infoMobile}
+        </if>
+        <if test="infoEmail != null and infoEmail!=''">
+            AND info_email = #{infoEmail}
+        </if>
+        <if test="wareId != null and wareId!=''">
+            AND ware_id = #{wareId}
+        </if>
+    </select>
+
+    <!-- 根据参数查询行数 -->
+    <select id="queryTotalCountToProductArrivalNotice" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select
+        count(1)
+        from np_goods_arrival_notice
+        where
+        <if test="noticeSturts != null and noticeSturts!=''">
+            notice_sturts = #{noticeSturts}
+        </if>
+        <if test="goodsInfoId != null and goodsInfoId!=''">
+            AND goods_info_id = #{goodsInfoId}
+        </if>
+        <if test="infoMobile != null and infoMobile!=''">
+            AND info_mobile = #{infoMobile}
+        </if>
+        <if test="infoEmail != null and infoEmail!=''">
+            AND info_email = #{infoEmail}
+        </if>
+        <if test="wareId != null and wareId!=''">
+            AND ware_id = #{wareId}
+        </if>
+    </select>
+
+    <!-- 根据货品ID查询集合 -->
+    <select id="queryByProductIdArrivalNotice"  parameterType="java.util.Map" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from np_goods_arrival_notice
+        where
+        <if test="noticeSturts != null and noticeSturts!=''">
+            notice_sturts = #{noticeSturts}
+        </if>
+        <if test="goodsInfoId != null and goodsInfoId!=''">
+            AND goods_info_id = #{goodsInfoId}
+        </if>
+        <if test="infoMobile != null and infoMobile!=''">
+            AND info_mobile = #{infoMobile}
+        </if>
+        <if test="infoEmail != null and infoEmail!=''">
+            AND info_email = #{infoEmail}
+        </if>
+        <if test="wareId != null and wareId!=''">
+            AND ware_id = #{wareId}
+        </if>
+        limit #{startRowNum},#{endRowNum}
+    </select>
+</mapper>

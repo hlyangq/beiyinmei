@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.deposit.mapper.TradeMapper">
+    <!-- 计数，分三个月内，三个月后 -->
+    <select id="tradeCount" resultType="java.lang.Long" parameterType="java.util.Map">
+        select count(0) from np_trade_info ti
+        where ti.del_flag = '0'
+        <if test="customerId != null">
+            and ti.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+
+        <!-- 多个类型 -->
+        <if test="types != null and types.length != 0">
+            AND ti.order_type in
+            <foreach collection="types" item="type" index="index" open="(" close=")" separator=",">
+                #{type}
+            </foreach>
+        </if>
+
+        <!-- 多个状态 -->
+        <if test="statuses != null and statuses.length != 0">
+            AND ti.order_status in
+            <foreach collection="statuses" item="status" index="index" open="(" close=")" separator=",">
+                #{status}
+            </foreach>
+        </if>
+
+        <if test="time != null"><!-- 时间区间参数 -->
+            <choose>
+                <when test="time == 'before3Month'"><!-- 传了这个参数不为空查三个月外的 -->
+                    <![CDATA[
+                    and ti.create_time < date_add(now(),interval -3 month)
+                    ]]>
+                </when>
+                <when test="time == 'before1Year'"><!-- 传了这个参数不为空查三个月外的 -->
+                    <![CDATA[
+                    and ti.create_time < date_add(now(),interval -12 month)
+                    ]]>
+                </when>
+                <otherwise><!-- 默认查三个月内,controller中使time不为空，""到这个条件中-->
+                    <![CDATA[
+                    and ti.create_time >= date_add(now(),interval -3 month)
+                    ]]>
+                </otherwise>
+            </choose>
+        </if>
+    </select>
+
+    <!-- 分页功能 -->
+    <select id="tradeList" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from np_trade_info as ti
+        where ti.del_flag = '0'
+        <if test="customerId != null">
+            and ti.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        <!-- 多个类型 -->
+        <if test="types != null and types.length != 0">
+            AND ti.order_type in
+            <foreach collection="types" item="type" index="index" open="(" close=")" separator=",">
+                #{type}
+            </foreach>
+        </if>
+
+        <!-- 多个状态 -->
+        <if test="statuses != null and statuses.length != 0">
+            AND ti.order_status in
+            <foreach collection="statuses" item="status" index="index" open="(" close=")" separator=",">
+                #{status}
+            </foreach>
+        </if>
+
+        <if test="time != null"><!-- 时间区间参数 -->
+            <choose>
+                <when test="time == 'before3Month'"><!-- 传了这个参数不为空查三个月外的 -->
+                    <![CDATA[
+                    and ti.create_time < date_add(now(),interval -3 month)
+                    ]]>
+                </when>
+                <when test="time == 'before1Year'"><!-- 传了这个参数不为空查三个月外的 -->
+                    <![CDATA[
+                    and ti.create_time < date_add(now(),interval -12 month)
+                    ]]>
+                </when>
+                <otherwise><!-- 默认查三个月内,controller中使time不为空，""到这个条件中-->
+                    <![CDATA[
+                    and ti.create_time >= date_add(now(),interval -3 month)
+                    ]]>
+                </otherwise>
+            </choose>
+        </if>
+
+        <!-- time == null时默认查询三个月内的数据 -->
+        <!--<if test="time==null">-->
+        <!--<![CDATA[-->
+        <!--and ti.create_time >= date_add(now(),interval -3 month)-->
+        <!--]]>-->
+        <!--</if>-->
+
+        order by create_time desc,id desc
+
+        <if test="startRowNum != null and pageSize != null">
+            limit #{startRowNum},#{pageSize}
+        </if>
+
+    </select>
+
+    <update id="updateTradeByOrderCode" parameterType="java.util.Map">
+        update np_trade_info ti
+        <set>
+            <if test="status != null">
+                ti.order_status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="currentPrice != null">
+                ti.current_price = #{currentPrice,jdbcType=BIGINT}
+            </if>
+        </set>
+        where 1 = 1
+        <if test="customerId != null">
+            and ti.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        and ti.order_code = #{orderCode,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateById" parameterType="java.util.Map">
+        update np_trade_info ti
+        <set>
+            <if test="status != null">
+                ti.order_status = #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="currentPrice != null">
+                ti.current_price = #{currentPrice,jdbcType=DECIMAL},
+            </if>
+        </set>
+        where ti.id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <insert id="saveTrade" parameterType="com.ningpai.deposit.bean.Trade">
+        insert into np_trade_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="customerId != null">
+                customer_id,
+            </if>
+            <if test="orderCode != null">
+                order_code,
+            </if>
+            <if test="orderType != null">
+                order_type,
+            </if>
+            <if test="orderStatus != null">
+                order_status,
+            </if>
+            <if test="orderPrice != null">
+                order_price,
+            </if>
+            <if test="currentPrice != null">
+                current_price,
+            </if>
+            <if test="tradeRemark != null">
+                trade_remark,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="delFlag != null">
+                del_flag,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="createPerson != null">
+                create_person,
+            </if>
+            <if test="reviewedRemark != null">
+                reviewed_remark,
+            </if>
+            <if test="certificateImg != null">
+                certificate_img,
+            </if>
+            <if test="payBillNum != null">
+                pay_bill_num,
+            </if>
+            <if test="tradeSource != null">
+                trade_source
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="customerId != null">
+                #{customerId,jdbcType=BIGINT},
+            </if>
+            <if test="orderCode != null">
+                #{orderCode,jdbcType=VARCHAR},
+            </if>
+            <if test="orderType != null">
+                #{orderType,jdbcType=VARCHAR},
+            </if>
+            <if test="orderStatus != null">
+                #{orderStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="orderPrice != null">
+                #{orderPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="currentPrice != null">
+                #{currentPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="tradeRemark != null">
+                #{tradeRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="delFlag != null">
+                #{delFlag,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createPerson != null">
+                #{createPerson,jdbcType=BIGINT},
+            </if>
+            <if test="reviewedRemark != null">
+                #{reviewedRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="certificateImg != null">
+                #{certificateImg,jdbcType=VARCHAR},
+            </if>
+            <if test="payBillNum != null">
+                #{payBillNum,jdbcType=INTEGER},
+            </if>
+            <if test="tradeSource != null">
+                #{tradeSource,jdbcType=VARCHAR}
+            </if>
+        </trim>
+    </insert>
+
+    <select id="findByOrderCodeAndCustomerId" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from np_trade_info ti
+        where 1=1
+        <if test="customerId != null">
+            and ti.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        and ti.order_code = #{orderCode,jdbcType=VARCHAR}
+    </select>
+
+    <select id="findByOrderCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from np_trade_info ti
+        where 1=1
+        and ti.order_code = #{orderCode,jdbcType=VARCHAR}
+    </select>
+
+    <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from np_trade_info where id = #{id}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qianmi.web.dao.EsThirdStoreInfoMapper">
+	<resultMap id="BaseResultMap" type="com.ningpai.goods.vo.ThirdStoreInfo">
+		<id column="store_id" property="storeId" jdbcType="BIGINT" />
+		<result column="customerId" property="customerid" jdbcType="BIGINT" />
+		<result column="store_name" property="storeName" jdbcType="VARCHAR" />
+		<result column="store_status" property="storeStatus" jdbcType="CHAR" />
+		<result column="company_name" property="companyName" jdbcType="VARCHAR" />
+		<result column="company_cre_time" property="companyCreTime" jdbcType="VARCHAR" />
+		<result column="company_addr" property="companyAddr" jdbcType="VARCHAR" />
+		<result column="company_addr_id" property="companyAddrId" jdbcType="VARCHAR" />
+		<result column="buss_addr_id" property="bussAddrId" jdbcType="VARCHAR" />
+		<result column="bank_addr_id" property="bankAddrId" jdbcType="VARCHAR" />
+		<result column="company_addr_del" property="companyAddrDel" jdbcType="VARCHAR" />
+		<result column="company_tel" property="companyTel" jdbcType="VARCHAR" />
+		<result column="company_emp_num" property="companyEmpNum" jdbcType="BIGINT" />
+		<result column="company_capital" property="companyCapital" jdbcType="DECIMAL" />
+		<result column="company_email" property="companyEmail" jdbcType="VARCHAR" />
+		<result column="company_type" property="companyType" jdbcType="CHAR" />
+		<result column="company_contact_name" property="companyContactName" jdbcType="VARCHAR" />
+		<result column="company_contact_tel" property="companyContactTel" jdbcType="VARCHAR" />
+		<result column="company_research_url" property="companyResearchUrl" jdbcType="VARCHAR" />
+		<result column="bank_url" property="bankUrl" jdbcType="VARCHAR" />
+		<result column="card_url" property="cardUrl" jdbcType="VARCHAR" />
+		<result column="company_sku" property="companySku" jdbcType="DECIMAL" />
+		<result column="company_avg" property="companyAvg" jdbcType="CHAR" />
+		<result column="return_addr" property="returnAddr" jdbcType="VARCHAR" />
+		<result column="return_mail" property="returnMail" jdbcType="VARCHAR" />
+		<result column="return_contact_name" property="returnContactName" jdbcType="VARCHAR" />
+		<result column="return_contact_tel" property="returnContactTel" jdbcType="VARCHAR" />
+		<result column="buss_id" property="bussId" jdbcType="VARCHAR" />
+		<result column="buss_addr" property="bussAddr" jdbcType="VARCHAR" />
+		<result column="BUSS_DATE" property="bussDate" jdbcType="VARCHAR" />
+		<result column="buss_dept_no" property="bussDeptNo" jdbcType="VARCHAR" />
+		<result column="buss_tax_regist_id" property="bussTaxRegistId" jdbcType="VARCHAR" />
+		<result column="buss_tax_regist_url" property="bussTaxRegistUrl" jdbcType="VARCHAR" />
+		<result column="buss_tax_payer_id" property="bussTaxPayerId" jdbcType="VARCHAR" />
+		<result column="buss_tax_cred_url" property="bussTaxCredUrl" jdbcType="VARCHAR" />
+		<result column="buss_tax_type" property="bussTaxType" jdbcType="VARCHAR" />
+		<result column="buss_tax_type_id" property="bussTaxTypeId" jdbcType="VARCHAR" />
+		<result column="buss_legal_name" property="bussLegalName" jdbcType="VARCHAR" />
+		<result column="buss_url" property="bussUrl" jdbcType="VARCHAR" />
+		<result column="buss_range" property="bussRange" jdbcType="VARCHAR" />
+		<result column="bank_username" property="bankUsername" jdbcType="VARCHAR" />
+		<result column="bank_card_id" property="bankCardId" jdbcType="VARCHAR" />
+		<result column="bank_addr" property="bankAddr" jdbcType="VARCHAR" />
+		<result column="bank_name" property="bankName" jdbcType="VARCHAR" />
+		<result column="bank_id" property="bankId" jdbcType="VARCHAR" />
+		<result column="check_status" property="checkStatus" jdbcType="CHAR" />
+		<result column="contract_url" property="contractUrl" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="mod_time" property="modTime" jdbcType="TIMESTAMP" />
+		<result column="del_flag" property="delFlag" jdbcType="CHAR" />
+		<result column="buss_legal_card_id" property="bussLegalCardId" jdbcType="VARCHAR" />
+		<result column="is_submit" property="isSubmit" jdbcType="VARCHAR" />
+		<result column="is_store_index" property="isStoreIndex" jdbcType="VARCHAR" />
+		<result column="refuse_content" property="refuseContent" jdbcType="VARCHAR" />
+		<result column="store_promise" property="storePromise" jdbcType="VARCHAR"/>
+		<result column="store_qi" property="storeQi" jdbcType="CHAR" />
+		<result column="customer_nickname" property="customerName" jdbcType="VARCHAR" />
+        <result column="expiry_time" property="expiryTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		store_id, customerId, store_name, store_status, company_name, company_cre_time,
+		company_addr, company_addr_del,
+		company_tel, company_emp_num, company_capital, company_email, company_type,
+		company_contact_name,
+		company_contact_tel, company_research_url, company_sku, company_avg, return_addr,
+		return_mail, return_contact_name, return_contact_tel, buss_id,
+		buss_addr, BUSS_DATE,
+		buss_dept_no, buss_tax_regist_id, buss_tax_regist_url, buss_tax_cred_url,
+		buss_tax_payer_id, buss_tax_type, buss_tax_type_id,
+		buss_legal_name, buss_url, buss_range, bank_username, bank_card_id, bank_addr,
+		bank_name,
+		bank_id, check_status, contract_url, create_time, mod_time,
+		del_flag,company_addr_id,buss_addr_id,bank_addr_id,bank_url,card_url,buss_legal_card_id,
+		is_submit,is_store_index,refuse_content,store_promise,store_qi,expiry_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from np_third_store_info
+		where store_id = #{storeId,jdbcType=BIGINT}
+	</select>
+
+</mapper>

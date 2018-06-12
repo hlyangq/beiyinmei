@@ -1,0 +1,31 @@
+<div id="wrapper">      
+        <div id="content">
+            <div class="section-01">
+                <div class="popular-brands">
+                    <div class="title">
+                        <h2>热门品牌</h2>
+                        <a id="replace-btn" href="javascript:;"><b></b>换一批</a>
+                    </div>
+                    <div class="cont">
+                        <div class="brands-cont">
+                            <ul class="brands-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--content -->
+    </div><!--wrapper-->
+    
+ <script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_eight/images/lazy_img.png",
+				skip_invisible: false
+			});
+});
+</script>

@@ -1,0 +1,88 @@
+0    WARN  [2016-02-17 15:37:24]  No custom configuration file unitils.properties found.
+2    INFO  [2016-02-17 15:37:24]  No local configuration file unitils-local.properties found.
+48   DEBUG [2016-02-17 15:37:24]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+49   DEBUG [2016-02-17 15:37:24]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+60   DEBUG [2016-02-17 15:37:24]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+63   DEBUG [2016-02-17 15:37:24]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+65   DEBUG [2016-02-17 15:37:24]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+75   DEBUG [2016-02-17 15:37:24]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+78   DEBUG [2016-02-17 15:37:24]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+124  DEBUG [2016-02-17 15:37:24]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+698  INFO  [2016-02-17 15:37:25]  退单成功，退单单号为：20160217901372
+2196 WARN  [2016-02-17 15:37:26]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$330ab6f1. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    WARN  [2016-06-01 16:24:42]  No custom configuration file unitils.properties found.
+34   INFO  [2016-06-01 16:24:42]  No local configuration file unitils-local.properties found.
+135  DEBUG [2016-06-01 16:24:42]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+140  DEBUG [2016-06-01 16:24:42]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+165  DEBUG [2016-06-01 16:24:42]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+169  DEBUG [2016-06-01 16:24:42]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+173  DEBUG [2016-06-01 16:24:42]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+221  DEBUG [2016-06-01 16:24:42]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+228  DEBUG [2016-06-01 16:24:42]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+313  DEBUG [2016-06-01 16:24:42]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    WARN  [2016-06-27 15:41:50]  No custom configuration file unitils.properties found.
+2    INFO  [2016-06-27 15:41:50]  No local configuration file unitils-local.properties found.
+37   DEBUG [2016-06-27 15:41:50]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+40   DEBUG [2016-06-27 15:41:50]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+58   DEBUG [2016-06-27 15:41:50]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+60   DEBUG [2016-06-27 15:41:50]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+62   DEBUG [2016-06-27 15:41:50]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+68   DEBUG [2016-06-27 15:41:50]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+71   DEBUG [2016-06-27 15:41:50]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+128  DEBUG [2016-06-27 15:41:50]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+511  INFO  [2016-06-27 15:41:50]  退单成功，退单单号为：20160627310605
+1340 WARN  [2016-06-27 15:41:51]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$19e56afb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+2431 WARN  [2016-06-27 15:41:52]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$19e56afb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+2583 WARN  [2016-06-27 15:41:52]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$19e56afb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+2781 ERROR [2016-06-27 15:41:53]  java.io.FileNotFoundException: /Users/zhangjin/Project/temp/kstore_v2/kstore_mobile_site/target/test-classes/com/ningpai/web/config/kuaidi100.properties (No such file or directory)
+3138 DEBUG [2016-06-27 15:41:53]  Get connection for route {s}->https://api.mch.weixin.qq.com
+8376 DEBUG [2016-06-27 15:41:58]  Connecting to api.mch.weixin.qq.com:443
+8544 DEBUG [2016-06-27 15:41:58]  CookieSpec selected: best-match
+8556 DEBUG [2016-06-27 15:41:58]  Auth cache not set in the context
+8558 DEBUG [2016-06-27 15:41:58]  Target auth state: UNCHALLENGED
+8559 DEBUG [2016-06-27 15:41:58]  Proxy auth state: UNCHALLENGED
+8560 DEBUG [2016-06-27 15:41:58]  Attempt 1 to execute request
+8560 DEBUG [2016-06-27 15:41:58]  Sending request: POST /pay/unifiedorder HTTP/1.1
+8561 DEBUG [2016-06-27 15:41:58]  >> "POST /pay/unifiedorder HTTP/1.1[\r][\n]"
+8572 DEBUG [2016-06-27 15:41:58]  >> "Connection: keep-alive[\r][\n]"
+8572 DEBUG [2016-06-27 15:41:58]  >> "Accept: */*[\r][\n]"
+8573 DEBUG [2016-06-27 15:41:58]  >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+8575 DEBUG [2016-06-27 15:41:58]  >> "Host: api.mch.weixin.qq.com[\r][\n]"
+8576 DEBUG [2016-06-27 15:41:58]  >> "X-Requested-With: XMLHttpRequest[\r][\n]"
+8576 DEBUG [2016-06-27 15:41:58]  >> "Cache-Control: max-age=0[\r][\n]"
+8576 DEBUG [2016-06-27 15:41:58]  >> "User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) [\r][\n]"
+8576 DEBUG [2016-06-27 15:41:58]  >> "Content-Length: 351[\r][\n]"
+8588 DEBUG [2016-06-27 15:41:58]  >> "[\r][\n]"
+8588 DEBUG [2016-06-27 15:41:58]  >> POST /pay/unifiedorder HTTP/1.1
+8589 DEBUG [2016-06-27 15:41:58]  >> Connection: keep-alive
+8589 DEBUG [2016-06-27 15:41:58]  >> Accept: */*
+8589 DEBUG [2016-06-27 15:41:58]  >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+8589 DEBUG [2016-06-27 15:41:58]  >> Host: api.mch.weixin.qq.com
+8589 DEBUG [2016-06-27 15:41:58]  >> X-Requested-With: XMLHttpRequest
+8589 DEBUG [2016-06-27 15:41:58]  >> Cache-Control: max-age=0
+8590 DEBUG [2016-06-27 15:41:58]  >> User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) 
+8590 DEBUG [2016-06-27 15:41:58]  >> Content-Length: 351
+8590 DEBUG [2016-06-27 15:41:58]  >> "<xml><appid>adfa</appid><mch_id>a</mch_id><nonce_str>1541532325</nonce_str><sign>12ED68AB28BB5F0CB86745FB3DADB0D0</sign><body><![CDATA[1]]></body><out_trade_no>null</out_trade_no><total_fee>1050</total_fee><spbill_create_ip>127.0.0.1</spbill_create_ip><notify_url>http://www.baidu.com</notify_url><trade_type>JSAPI</trade_type><openid>1</openid></xml>"
+8712 DEBUG [2016-06-27 15:41:58]  << "HTTP/1.1 200 OK[\r][\n]"
+8714 DEBUG [2016-06-27 15:41:58]  << "Server: nginx[\r][\n]"
+8714 DEBUG [2016-06-27 15:41:58]  << "Date: Mon, 27 Jun 2016 07:41:45 GMT[\r][\n]"
+8715 DEBUG [2016-06-27 15:41:58]  << "Content-Type: text/plain[\r][\n]"
+8715 DEBUG [2016-06-27 15:41:58]  << "Content-Length: 116[\r][\n]"
+8715 DEBUG [2016-06-27 15:41:58]  << "Connection: keep-alive[\r][\n]"
+8715 DEBUG [2016-06-27 15:41:58]  << "Keep-Alive: timeout=8[\r][\n]"
+8715 DEBUG [2016-06-27 15:41:58]  << "[\r][\n]"
+8716 DEBUG [2016-06-27 15:41:58]  Receiving response: HTTP/1.1 200 OK
+8716 DEBUG [2016-06-27 15:41:58]  << HTTP/1.1 200 OK
+8716 DEBUG [2016-06-27 15:41:58]  << Server: nginx
+8716 DEBUG [2016-06-27 15:41:58]  << Date: Mon, 27 Jun 2016 07:41:45 GMT
+8716 DEBUG [2016-06-27 15:41:58]  << Content-Type: text/plain
+8717 DEBUG [2016-06-27 15:41:58]  << Content-Length: 116
+8717 DEBUG [2016-06-27 15:41:58]  << Connection: keep-alive
+8717 DEBUG [2016-06-27 15:41:58]  << Keep-Alive: timeout=8
+8723 DEBUG [2016-06-27 15:41:58]  Connection can be kept alive for 8000 MILLISECONDS
+8730 DEBUG [2016-06-27 15:41:58]  << "<xml><return_code><![CDATA[FAIL]]></return_code>[\n]"
+8730 DEBUG [2016-06-27 15:41:58]  << "<return_msg><![CDATA[appid[0xe5][0x8f][0x82][0xe6][0x95][0xb0][0xe9][0x95][0xbf][0xe5][0xba][0xa6][0xe6][0x9c][0x89][0xe8][0xaf][0xaf]]]></return_msg>[\n]"
+8730 DEBUG [2016-06-27 15:41:58]  << "</xml>"
+8731 DEBUG [2016-06-27 15:41:58]  Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@61f39bb
+8731 DEBUG [2016-06-27 15:41:58]  Connection can be kept alive for 8000 MILLISECONDS
+9091 INFO  [2016-06-27 15:41:59]  ------------------------------没错，发送成功了------------------------------

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ningpai</groupId>
+    <artifactId>kstore</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <modules>
+        <module>kstore_core</module>
+        <module>kstore_common</module>
+        <module>kstore_custom</module>
+        <module>kstore_centaur</module>
+        <module>kstore_goods</module>
+        <module>kstore_system</module>
+        <module>kstore_gift</module>
+        <module>kstore_newboss_site</module>
+        <module>kstore_information</module>
+        <module>kstore_market</module>
+        <module>kstore_order</module>
+        <module>kstore_templet</module>
+
+
+        <!-- 前台共通模块 -->
+        <module>kstore_site_common</module>
+
+        <!-- 前台 -->
+        <module>kstore_site</module>
+
+        <!-- 移动端前台 -->
+        <module>kstore_mobile_site</module>
+
+        <!-- 开发API -->
+        <module>kstore_open</module>
+
+        <module>kstore_newthird_site</module>
+        <module>kstore_searchplatform</module>
+        <module>kstore_goods_platform</module>
+
+    </modules>
+
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>local private nexus</name>
+            <url>http://maven.ningpai.com:9001/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>nexus repository</id>
+            <name>intranet public groups</name>
+            <url>http://nexus.dev.ofpay.com/nexus/content/groups/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>sonar</id>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>sonar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

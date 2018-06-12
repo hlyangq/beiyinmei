@@ -1,0 +1,39 @@
+.topic-tabs {
+    height: 50px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.tabs-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    padding-left: 10px;
+    width: 1200px;
+}
+.tabs-list li {
+    align-self: stretch;
+    line-height: 50px;
+}
+.tabs-list a {
+    display: block;
+    color: #18d0b9;
+    width: 100px;
+    padding-left: 20px;
+    font-size: 16px;
+    position: relative;
+}
+.tabs-list a img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    top: 15px;
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 25px;
+    width: 451px;
+    z-index: 9999;
+}

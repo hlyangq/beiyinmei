@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.marketing.dao.FullbuyPresentScopeMapper" >
+  <resultMap id="BaseResultMap" type="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    <id column="present_scope_id" property="presentScopeId" jdbcType="BIGINT" />
+    <result column="scope_type" property="scopeType" jdbcType="CHAR" />
+    <result column="scope_id" property="scopeId" jdbcType="BIGINT" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="scope_num" property="scopeNum" jdbcType="BIGINT" />
+    <result column="fullbuy_present_marketing_id" property="fullbuyPresentMarketingId" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="PresentResultMap" type="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    <id column="present_scope_id" property="presentScopeId" jdbcType="BIGINT" />
+    <result column="scope_type" property="scopeType" jdbcType="CHAR" />
+    <result column="scope_id" property="scopeId" jdbcType="BIGINT" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="scope_num" property="scopeNum" jdbcType="BIGINT" />
+    <result column="fullbuy_present_marketing_id" property="fullbuyPresentMarketingId" jdbcType="BIGINT" />
+    <association property="goodsProduct" column="scope_id" select="com.ningpai.goods.dao.GoodsProductMapper.queryProductByGoodsIds"></association>
+    <collection property="specVoList" column="scope_id" javaType="ArrayList" ofType="com.ningpai.goods.vo.GoodsProductReleSpecVo"
+                  select="com.ningpai.goods.dao.GoodsProductReleSpecMapper.queryAllByProductId"
+              ></collection>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    present_scope_id, scope_type, scope_id, del_flag, create_time, scope_num, fullbuy_present_marketing_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from np_fullbuy_present_scope
+    where present_scope_id = #{presentScopeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from np_fullbuy_present_scope
+    where present_scope_id = #{presentScopeId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    insert into np_fullbuy_present_scope (present_scope_id, scope_type, scope_id, 
+      del_flag, create_time, scope_num, 
+      fullbuy_present_marketing_id)
+    values (#{presentScopeId,jdbcType=BIGINT}, #{scopeType,jdbcType=CHAR}, #{scopeId,jdbcType=BIGINT}, 
+      #{delFlag,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{scopeNum,jdbcType=BIGINT}, 
+      #{fullbuyPresentMarketingId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    insert into np_fullbuy_present_scope
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="presentScopeId != null" >
+        present_scope_id,
+      </if>
+      <if test="scopeType != null" >
+        scope_type,
+      </if>
+      <if test="scopeId != null" >
+        scope_id,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="scopeNum != null" >
+        scope_num,
+      </if>
+      <if test="fullbuyPresentMarketingId != null" >
+        fullbuy_present_marketing_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="presentScopeId != null" >
+        #{presentScopeId,jdbcType=BIGINT},
+      </if>
+      <if test="scopeType != null" >
+        #{scopeType,jdbcType=CHAR},
+      </if>
+      <if test="scopeId != null" >
+        #{scopeId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scopeNum != null" >
+        #{scopeNum,jdbcType=BIGINT},
+      </if>
+      <if test="fullbuyPresentMarketingId != null" >
+        #{fullbuyPresentMarketingId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    update np_fullbuy_present_scope
+    <set >
+      <if test="scopeType != null" >
+        scope_type = #{scopeType,jdbcType=CHAR},
+      </if>
+      <if test="scopeId != null" >
+        scope_id = #{scopeId,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="scopeNum != null" >
+        scope_num = #{scopeNum,jdbcType=BIGINT},
+      </if>
+      <if test="fullbuyPresentMarketingId != null" >
+        fullbuy_present_marketing_id = #{fullbuyPresentMarketingId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where present_scope_id = #{presentScopeId,jdbcType=BIGINT}
+  </update>
+  <update id="deleteByPresentMarketingId" parameterType="java.lang.Long" >
+    update np_fullbuy_present_scope
+    set
+        del_flag = '1'
+    where fullbuy_present_marketing_id = #{fullbuyPresentMarketingId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ningpai.marketing.bean.FullbuyPresentScope" >
+    update np_fullbuy_present_scope
+    set scope_type = #{scopeType,jdbcType=CHAR},
+      scope_id = #{scopeId,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      scope_num = #{scopeNum,jdbcType=BIGINT},
+      fullbuy_present_marketing_id = #{fullbuyPresentMarketingId,jdbcType=BIGINT}
+    where present_scope_id = #{presentScopeId,jdbcType=BIGINT}
+  </update>
+  <select id="selectPresentsByPresentMarketingId" resultMap="PresentResultMap" parameterType="java.lang.Long" >
+      select
+      <include refid="Base_Column_List" />
+      from np_fullbuy_present_scope
+      where fullbuy_present_marketing_id = #{fullbuyPresentMarketingId,jdbcType=BIGINT}
+  </select>
+
+  <!-- 根据范围ID数组查询货品范围信息 -->
+  <select id="queryByScopeIds" parameterType="java.util.ArrayList" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from np_fullbuy_present_scope where present_scope_id in
+    <foreach collection="list" item="scopeId" open="(" close=")" separator=",">
+      #{scopeId}
+    </foreach>
+    and del_flag='0' and scope_type = '0'
+  </select>
+</mapper>

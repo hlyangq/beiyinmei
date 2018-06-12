@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.deposit.mapper.TradeMapper" >
+  <resultMap id="BaseResultMap" type="com.ningpai.deposit.bean.Trade" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+    <result column="order_type" property="orderType" jdbcType="CHAR" />
+    <result column="order_status" property="orderStatus" jdbcType="CHAR" />
+    <result column="order_price" property="orderPrice" jdbcType="DECIMAL" />
+    <result column="current_price" property="currentPrice" jdbcType="DECIMAL" />
+    <result column="trade_remark" property="tradeRemark" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_person" property="createPerson" jdbcType="BIGINT" />
+    <result column="reviewed_remark" property="reviewedRemark" jdbcType="VARCHAR" />
+    <result column="certificate_img" property="certificateImg" jdbcType="VARCHAR" />
+    <result column="pay_bill_num" property="payBillNum" jdbcType="VARCHAR" />
+    <result column="trade_source" property="tradeSource" jdbcType="VARCHAR" />
+    <result column="pay_remark" property="payRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, customer_id, order_code, order_type, order_status, order_price, current_price, 
+    trade_remark, update_time, del_flag, create_time, create_person, reviewed_remark, 
+    certificate_img, pay_bill_num, trade_source, pay_remark
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ningpai.deposit.bean.TradeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from np_trade_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from np_trade_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from np_trade_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ningpai.deposit.bean.TradeExample" >
+    delete from np_trade_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ningpai.deposit.bean.Trade" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into np_trade_info (id, customer_id, order_code, 
+      order_type, order_status, order_price, 
+      current_price, trade_remark, update_time, 
+      del_flag, create_time, create_person, 
+      reviewed_remark, certificate_img, pay_bill_num, 
+      trade_source, pay_remark)
+    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{orderCode,jdbcType=VARCHAR}, 
+      #{orderType,jdbcType=CHAR}, #{orderStatus,jdbcType=CHAR}, #{orderPrice,jdbcType=DECIMAL}, 
+      #{currentPrice,jdbcType=DECIMAL}, #{tradeRemark,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{delFlag,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createPerson,jdbcType=BIGINT}, 
+      #{reviewedRemark,jdbcType=VARCHAR}, #{certificateImg,jdbcType=VARCHAR}, #{payBillNum,jdbcType=VARCHAR}, 
+      #{tradeSource,jdbcType=VARCHAR}, #{payRemark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ningpai.deposit.bean.Trade" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into np_trade_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      id,
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="orderCode != null" >
+        order_code,
+      </if>
+      <if test="orderType != null" >
+        order_type,
+      </if>
+      <if test="orderStatus != null" >
+        order_status,
+      </if>
+      <if test="orderPrice != null" >
+        order_price,
+      </if>
+      <if test="currentPrice != null" >
+        current_price,
+      </if>
+      <if test="tradeRemark != null" >
+        trade_remark,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createPerson != null" >
+        create_person,
+      </if>
+      <if test="reviewedRemark != null" >
+        reviewed_remark,
+      </if>
+      <if test="certificateImg != null" >
+        certificate_img,
+      </if>
+      <if test="payBillNum != null" >
+        pay_bill_num,
+      </if>
+      <if test="tradeSource != null" >
+        trade_source,
+      </if>
+      <if test="payRemark != null" >
+        pay_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{id,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="orderCode != null" >
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null" >
+        #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=CHAR},
+      </if>
+      <if test="orderPrice != null" >
+        #{orderPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="currentPrice != null" >
+        #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tradeRemark != null" >
+        #{tradeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createPerson != null" >
+        #{createPerson,jdbcType=BIGINT},
+      </if>
+      <if test="reviewedRemark != null" >
+        #{reviewedRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateImg != null" >
+        #{certificateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="payBillNum != null" >
+        #{payBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeSource != null" >
+        #{tradeSource,jdbcType=VARCHAR},
+      </if>
+      <if test="payRemark != null" >
+        #{payRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ningpai.deposit.bean.TradeExample" resultType="java.lang.Integer" >
+    select count(*) from np_trade_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update np_trade_info
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.customerId != null" >
+        customer_id = #{record.customerId,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderCode != null" >
+        order_code = #{record.orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderType != null" >
+        order_type = #{record.orderType,jdbcType=CHAR},
+      </if>
+      <if test="record.orderStatus != null" >
+        order_status = #{record.orderStatus,jdbcType=CHAR},
+      </if>
+      <if test="record.orderPrice != null" >
+        order_price = #{record.orderPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.currentPrice != null" >
+        current_price = #{record.currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.tradeRemark != null" >
+        trade_remark = #{record.tradeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.delFlag != null" >
+        del_flag = #{record.delFlag,jdbcType=CHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createPerson != null" >
+        create_person = #{record.createPerson,jdbcType=BIGINT},
+      </if>
+      <if test="record.reviewedRemark != null" >
+        reviewed_remark = #{record.reviewedRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certificateImg != null" >
+        certificate_img = #{record.certificateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payBillNum != null" >
+        pay_bill_num = #{record.payBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tradeSource != null" >
+        trade_source = #{record.tradeSource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payRemark != null" >
+        pay_remark = #{record.payRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update np_trade_info
+    set id = #{record.id,jdbcType=BIGINT},
+      customer_id = #{record.customerId,jdbcType=BIGINT},
+      order_code = #{record.orderCode,jdbcType=VARCHAR},
+      order_type = #{record.orderType,jdbcType=CHAR},
+      order_status = #{record.orderStatus,jdbcType=CHAR},
+      order_price = #{record.orderPrice,jdbcType=DECIMAL},
+      current_price = #{record.currentPrice,jdbcType=DECIMAL},
+      trade_remark = #{record.tradeRemark,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{record.delFlag,jdbcType=CHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      create_person = #{record.createPerson,jdbcType=BIGINT},
+      reviewed_remark = #{record.reviewedRemark,jdbcType=VARCHAR},
+      certificate_img = #{record.certificateImg,jdbcType=VARCHAR},
+      pay_bill_num = #{record.payBillNum,jdbcType=VARCHAR},
+      trade_source = #{record.tradeSource,jdbcType=VARCHAR},
+      pay_remark = #{record.payRemark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ningpai.deposit.bean.Trade" >
+    update np_trade_info
+    <set >
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="orderCode != null" >
+        order_code = #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orderType != null" >
+        order_type = #{orderType,jdbcType=CHAR},
+      </if>
+      <if test="orderStatus != null" >
+        order_status = #{orderStatus,jdbcType=CHAR},
+      </if>
+      <if test="orderPrice != null" >
+        order_price = #{orderPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="currentPrice != null" >
+        current_price = #{currentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tradeRemark != null" >
+        trade_remark = #{tradeRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createPerson != null" >
+        create_person = #{createPerson,jdbcType=BIGINT},
+      </if>
+      <if test="reviewedRemark != null" >
+        reviewed_remark = #{reviewedRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="certificateImg != null" >
+        certificate_img = #{certificateImg,jdbcType=VARCHAR},
+      </if>
+      <if test="payBillNum != null" >
+        pay_bill_num = #{payBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="tradeSource != null" >
+        trade_source = #{tradeSource,jdbcType=VARCHAR},
+      </if>
+      <if test="payRemark != null" >
+        pay_remark = #{payRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ningpai.deposit.bean.Trade" >
+    update np_trade_info
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      order_code = #{orderCode,jdbcType=VARCHAR},
+      order_type = #{orderType,jdbcType=CHAR},
+      order_status = #{orderStatus,jdbcType=CHAR},
+      order_price = #{orderPrice,jdbcType=DECIMAL},
+      current_price = #{currentPrice,jdbcType=DECIMAL},
+      trade_remark = #{tradeRemark,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      del_flag = #{delFlag,jdbcType=CHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_person = #{createPerson,jdbcType=BIGINT},
+      reviewed_remark = #{reviewedRemark,jdbcType=VARCHAR},
+      certificate_img = #{certificateImg,jdbcType=VARCHAR},
+      pay_bill_num = #{payBillNum,jdbcType=VARCHAR},
+      trade_source = #{tradeSource,jdbcType=VARCHAR},
+      pay_remark = #{payRemark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

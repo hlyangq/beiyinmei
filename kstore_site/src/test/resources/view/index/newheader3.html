@@ -1,0 +1,146 @@
+<style>
+.divhide{
+	 display: none;
+}
+</style>
+
+<div class="container">
+    	<div class="header clearfix">
+    		<div class="logo fl mt10">
+    			<a href="a"><img src="a" alt="" /></a>
+    		</div><!--/logo-->
+			<div class="search_wp fl mt15 pr">
+            	<div class="search_box clearfix">
+                	<form id="topSearchForm" action = "/goods/searchproduct2.html" method = "get">
+                            <input class="search_text fl" type="text" name="title" autocomplete="off" value=""/>
+                	<input class="search_btn fl" type="button" onclick="checkSearch()" value="" />
+            		</form>
+                </div><!--/search_box-->
+                <div class="hot_word mt10">
+                	热门搜索：
+                </div><!--/hot_word-->
+                <div class="ex_search pa" >
+                    <ul id="searchList">
+                    </ul>
+                    <p class="tr"><a class="close_ex" href="javascript:;">关闭</a></p>
+                </div><!--/ex_search-->
+<!--/ex_search-->
+
+            </div><!--/search_wp-->
+            <div class="shopping_cart_a fr ml20 mt20">
+            	<dl class="pr fl mr10 sc-01">
+            		<dt class="pr center">
+            			<a href="/customer/index.html">个人中心</a>
+            		</dt>
+            		<dd style="width:312px; right:1px;">
+            			<div class="center_detail pt10">
+            				<p class="title pl10">
+            						<a href="/login.html">请登录</a>
+            				</p>                         
+                            <div class="order_deal clearfix">
+                            	<ul class="fl">
+                            		<li>
+                            			<a 
+                                    		class="active" target="_blank" href="/customer/myorder-0-0-1.html"
+                                    	>待处理订单<span>(1)</span></a>
+                            		</li>
+                            		<li>
+                            			<a
+                                    		class="active" href="javascript:;"
+                                    	>咨询回复<span>(1)</span></a>
+                            		</li>
+                            		<li>
+                            			<a 
+                                    		class="active" target="_blank" href="/customer/myfollw.html"
+                                    	>降价商品<span>(1)</span></a>
+                            		</li>
+                            		<li>
+                            			<a href="javascript:;">返修退换货</a><span>(0)</span>
+                            		</li>
+                            		<li>
+                            			<a 
+	                                    		href="javascript:;"
+                            			>优惠券</a><span>(0)</span>
+                            		</li>
+                            	</ul>
+                            	<ul class="fl" style="border-right:none;">
+                            		<li><a href="/customer/browserecord.html">我的关注》</a></li>
+                            		<li><a href="/customer/myintegral.html">我的积分》</a></li>
+                            		<li><a href="javascript:;">我的理财》</a></li>
+                            		<li><a href="/customer/myfollw.html">我的收藏》</a></li>
+                            	</ul>
+                            </div><!--order_deal-->
+                            
+            			</div><!--center_detail-->
+
+            		</dd>
+            	</dl>
+            	
+            	<dl class="pr fl sc-02" id="loadcart">
+            		<dt class="pr" id="mminicart">
+            			<span class="sc_num"><em></em></span>
+                    	<a href="/myshoppingcart.html">我的购物车</a>
+            		</dt>
+            		<dd>
+            			<div class="cart_empty none">
+            				<p>购物车中还没有商品，赶紧选购吧！</p>
+            			</div><!--/cart_empty-->
+            			<div class="cart_cont">
+            				<div class="cart_tit fb mt5 pl10">
+            					最新加入的商品
+            				</div><!--/cart_tit-->
+            				<ul class="cart_list mt10">
+            				</ul><!--/cart_list-->
+            				<div class="p10" style="background:#f5f5f5;">
+	            				<div class="settle_accounts tr mt10">
+		            					<span class="mr10">共1件商品</span>
+	            					共计
+	            					<em><b>¥</b>2878.00</em>
+	            				</div><!--/settle_accounts-->
+	            				<div class="tr mt10 mb10"><a class="settle_btn" href="/myshoppingcart.html">去购物车结算</a></div>
+            			    </div>
+            			</div><!--/cart_cont-->
+            		</dd>
+            	</dl>
+            </div><!--/shopping_cart-->
+    	</div><!--/header-->
+    </div><!--container-->
+    
+    
+    <div class="headwid"> 
+        <div class="container">   
+        <div class="nav clearfix">
+        	<input type="hidden" id="tempcbshowflag" value="">
+    		<div class="pro_sort fl pr">
+    			<h2><a href="javascript:;">全部商品分类</a><b></b></h2>
+    			<div class="sort_cont pa none">
+    			</div><!--/sort_cont-->
+    			
+    			<div class="sort_open pa">
+<!--/category_box-->
+                            
+                    <a class="close_category pa" href="javascript:;"></a>
+    			</div><!--/sort_open-->
+    		</div><!--/pro_sort-->
+    		
+    		
+    		<ul class="sort_list clearfix fl">
+    		</ul><!--/sort_list-->
+            <div class="hot_line">025-68586888</div>
+    	</div><!--/nav-->
+    </div><!--container-->
+    </div>
+    <script type="text/javascript" src="/js/jsOperation.js"></script>
+        <script type="text/javascript">
+       function clickNav(url,sort){ 
+            $.ajax({ url:"/navsort.htm?navsort="+sort, async:false ,success: function(date){
+                }
+            }); 
+            //window.location.href="/"+url;
+           if(url.indexOf("ttp://")!=-1){
+               window.open(url);
+           }else{
+               window.open("/"+url);
+           }
+        }
+        </script>

@@ -1,0 +1,439 @@
+1092 ERROR [2016-09-12 14:54:24]  ģ�����ɴ���
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> topmap.systembase  [in template "newheader15_ftl.ftl" at line 6, column 28]
+
+Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
+The failing instruction
+ (FTL stack trace):
+----------
+==> ${topmap.systembase.bsetAddress}  [in template "newheader15_ftl.ftl" at line 6, column 26]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:98)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:41)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:24)
+	at freemarker.core.Dot._eval(Dot.java:81)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:115)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at com.ningpai.index.util.IndexStaticizeUtil.analysisTemplate(IndexStaticizeUtil.java:64)
+	at com.ningpai.index.service.TopAndBottomService.staticizeTopFifteen(TopAndBottomService.java:1372)
+	at com.ningpai.index.service.TopAndBottomService.checkChangeTempFifteen(TopAndBottomService.java:963)
+	at com.ningpai.index.service.TopAndBottomService.getBottom(TopAndBottomService.java:293)
+	at com.junit.test.index.service.TopAndBottomServiceTest.testgetBottom201(TopAndBottomServiceTest.java:485)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at org.unitils.UnitilsJUnit3.runTest(UnitilsJUnit3.java:111)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at org.unitils.UnitilsJUnit3.runBare(UnitilsJUnit3.java:76)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+1096 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index15_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1096 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index15_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index15_ftl.ftl"
+1127 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1127 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader14_ftl.ftl"
+1136 ERROR [2016-09-12 14:54:24]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> topmap.systembase  [in template "newheader14_ftl.ftl" at line 6, column 28]
+
+Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
+The failing instruction
+ (FTL stack trace):
+----------
+==> ${topmap.systembase.bsetAddress}  [in template "newheader14_ftl.ftl" at line 6, column 26]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:98)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:41)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:24)
+	at freemarker.core.Dot._eval(Dot.java:81)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:115)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at com.ningpai.index.util.IndexStaticizeUtil.analysisTemplate(IndexStaticizeUtil.java:64)
+	at com.ningpai.index.service.TopAndBottomService.staticizeTopFourteen(TopAndBottomService.java:1351)
+	at com.ningpai.index.service.TopAndBottomService.checkChangeTempFourteen(TopAndBottomService.java:924)
+	at com.ningpai.index.service.TopAndBottomService.getBottom(TopAndBottomService.java:290)
+	at com.junit.test.index.service.TopAndBottomServiceTest.testgetBottom191(TopAndBottomServiceTest.java:463)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at org.unitils.UnitilsJUnit3.runTest(UnitilsJUnit3.java:111)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at org.unitils.UnitilsJUnit3.runBare(UnitilsJUnit3.java:76)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+1137 ERROR [2016-09-12 14:54:24]  ģ�����ɴ���
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> topmap.systembase  [in template "newheader14_ftl.ftl" at line 6, column 28]
+
+Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
+The failing instruction
+ (FTL stack trace):
+----------
+==> ${topmap.systembase.bsetAddress}  [in template "newheader14_ftl.ftl" at line 6, column 26]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:98)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:41)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:24)
+	at freemarker.core.Dot._eval(Dot.java:81)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:115)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at com.ningpai.index.util.IndexStaticizeUtil.analysisTemplate(IndexStaticizeUtil.java:64)
+	at com.ningpai.index.service.TopAndBottomService.staticizeTopFourteen(TopAndBottomService.java:1351)
+	at com.ningpai.index.service.TopAndBottomService.checkChangeTempFourteen(TopAndBottomService.java:924)
+	at com.ningpai.index.service.TopAndBottomService.getBottom(TopAndBottomService.java:290)
+	at com.junit.test.index.service.TopAndBottomServiceTest.testgetBottom191(TopAndBottomServiceTest.java:463)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at org.unitils.UnitilsJUnit3.runTest(UnitilsJUnit3.java:111)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at org.unitils.UnitilsJUnit3.runBare(UnitilsJUnit3.java:76)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+1140 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1141 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index14_ftl.ftl"
+1179 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1179 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader14_ftl.ftl"
+1190 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1190 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index14_ftl.ftl"
+1226 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader15_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1226 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader15_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader15_ftl.ftl"
+1238 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index15_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1242 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index15_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index15_ftl.ftl"
+1304 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader3_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1305 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader3_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader3_ftl.ftl"
+1319 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index3_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1320 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index3_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index3_ftl.ftl"
+1367 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader4_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1368 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader4_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader4_ftl.ftl"
+1378 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index4_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1379 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index4_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index4_ftl.ftl"
+1421 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader5_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1422 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader5_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader5_ftl.ftl"
+1430 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index5_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1430 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index5_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index5_ftl.ftl"
+1486 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader6_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1487 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader6_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader6_ftl.ftl"
+1496 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index6_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1496 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index6_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index6_ftl.ftl"
+1539 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader7_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1540 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader7_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader7_ftl.ftl"
+1549 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index7_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1549 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index7_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index7_ftl.ftl"
+1593 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader8_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1593 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader8_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader8_ftl.ftl"
+1602 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader8_newftl.ftl"["zh_CN",utf-8,parsed] ]
+1602 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader8_newftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader8_newftl.ftl"
+1611 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index8_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1612 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index8_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index8_ftl.ftl"
+1653 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader9_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1654 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader9_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader9_ftl.ftl"
+1663 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index9_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1663 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index9_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index9_ftl.ftl"
+1711 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader10_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1712 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader10_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader10_ftl.ftl"
+1723 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index10_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1723 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index10_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index10_ftl.ftl"
+1761 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader11_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1761 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader11_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader11_ftl.ftl"
+1773 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index11_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1774 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index11_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index11_ftl.ftl"
+1811 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader12_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1812 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader12_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader12_ftl.ftl"
+1828 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index12_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1828 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index12_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index12_ftl.ftl"
+1875 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["newheader13_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1876 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "newheader13_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader13_ftl.ftl"
+1887 DEBUG [2016-09-12 14:54:24]  Could not find template in cache, creating new one; id=["index13_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1888 DEBUG [2016-09-12 14:54:24]  Compiling FreeMarker template "index13_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index13_ftl.ftl"
+1970 WARN  [2016-09-12 14:54:24]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$2a22a53. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+3217 INFO  [2016-09-12 14:54:26]  load es index name fail use default index name 'qm-test-item'
+3682 WARN  [2016-09-12 14:54:26]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$2a22a53. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+4120 INFO  [2016-09-12 14:54:27]  �˵��ɹ����˵�����Ϊ��20160912193244
+4298 WARN  [2016-09-12 14:54:27]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$2a22a53. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+4328 WARN  [2016-09-12 14:54:27]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$2a22a53. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    WARN  [2016-09-13 20:38:26]  No custom configuration file unitils.properties found.
+1    INFO  [2016-09-13 20:38:26]  No local configuration file unitils-local.properties found.
+29   DEBUG [2016-09-13 20:38:26]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+30   DEBUG [2016-09-13 20:38:26]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+39   DEBUG [2016-09-13 20:38:26]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+41   DEBUG [2016-09-13 20:38:26]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+44   DEBUG [2016-09-13 20:38:26]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+49   DEBUG [2016-09-13 20:38:26]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+51   DEBUG [2016-09-13 20:38:26]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+94   DEBUG [2016-09-13 20:38:26]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+737  DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader3_ftl.ftl"["zh_CN",utf-8,parsed] ]
+739  DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader3_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader3_ftl.ftl"
+860  DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index3_ftl.ftl"["zh_CN",utf-8,parsed] ]
+861  DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index3_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index3_ftl.ftl"
+934  DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader4_ftl.ftl"["zh_CN",utf-8,parsed] ]
+934  DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader4_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader4_ftl.ftl"
+944  DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index4_ftl.ftl"["zh_CN",utf-8,parsed] ]
+945  DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index4_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index4_ftl.ftl"
+990  DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader5_ftl.ftl"["zh_CN",utf-8,parsed] ]
+990  DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader5_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader5_ftl.ftl"
+1003 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index5_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1004 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index5_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index5_ftl.ftl"
+1063 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader6_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1063 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader6_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader6_ftl.ftl"
+1072 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index6_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1073 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index6_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index6_ftl.ftl"
+1136 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader7_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1137 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader7_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader7_ftl.ftl"
+1146 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index7_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1146 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index7_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index7_ftl.ftl"
+1241 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader8_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1242 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader8_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader8_ftl.ftl"
+1250 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader8_newftl.ftl"["zh_CN",utf-8,parsed] ]
+1250 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader8_newftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader8_newftl.ftl"
+1258 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index8_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1259 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index8_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index8_ftl.ftl"
+1300 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader9_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1301 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader9_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader9_ftl.ftl"
+1310 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index9_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1310 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index9_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index9_ftl.ftl"
+1358 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader10_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1359 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader10_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader10_ftl.ftl"
+1368 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index10_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1368 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index10_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index10_ftl.ftl"
+1413 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader11_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1414 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader11_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader11_ftl.ftl"
+1422 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index11_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1422 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index11_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index11_ftl.ftl"
+1467 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader12_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1468 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader12_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader12_ftl.ftl"
+1477 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index12_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1477 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index12_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index12_ftl.ftl"
+1520 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader13_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1521 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader13_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader13_ftl.ftl"
+1537 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index13_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1537 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index13_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index13_ftl.ftl"
+1597 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader15_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1598 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader15_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader15_ftl.ftl"
+1607 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index15_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1607 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index15_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index15_ftl.ftl"
+1632 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["newheader14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1632 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "newheader14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader14_ftl.ftl"
+1642 ERROR [2016-09-13 20:38:27]  Error executing FreeMarker template
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> topmap.systembase  [in template "newheader14_ftl.ftl" at line 6, column 28]
+
+Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
+The failing instruction
+ (FTL stack trace):
+----------
+==> ${topmap.systembase.bsetAddress}  [in template "newheader14_ftl.ftl" at line 6, column 26]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:98)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:41)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:24)
+	at freemarker.core.Dot._eval(Dot.java:81)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:115)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at com.ningpai.index.util.IndexStaticizeUtil.analysisTemplate(IndexStaticizeUtil.java:64)
+	at com.ningpai.index.service.TopAndBottomService.staticizeTopFourteen(TopAndBottomService.java:1351)
+	at com.ningpai.index.service.TopAndBottomService.checkChangeTempFourteen(TopAndBottomService.java:924)
+	at com.ningpai.index.service.TopAndBottomService.getBottom(TopAndBottomService.java:290)
+	at com.junit.test.index.service.TopAndBottomServiceTest.testgetBottom191(TopAndBottomServiceTest.java:463)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at org.unitils.UnitilsJUnit3.runTest(UnitilsJUnit3.java:111)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at org.unitils.UnitilsJUnit3.runBare(UnitilsJUnit3.java:76)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+1646 ERROR [2016-09-13 20:38:27]  ģ�����ɴ���
+FreeMarker template error:
+The following has evaluated to null or missing:
+==> topmap.systembase  [in template "newheader14_ftl.ftl" at line 6, column 28]
+
+Tip: If the failing expression is known to be legally null/missing, either specify a default value with myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthessis: (myOptionVar.foo)!myDefault, (myOptionVar.foo)??
+The failing instruction
+ (FTL stack trace):
+----------
+==> ${topmap.systembase.bsetAddress}  [in template "newheader14_ftl.ftl" at line 6, column 26]
+----------
+
+Java stack trace (for programmers):
+----------
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:98)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:41)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:24)
+	at freemarker.core.Dot._eval(Dot.java:81)
+	at freemarker.core.Expression.eval(Expression.java:111)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:115)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.MixedContent.accept(MixedContent.java:93)
+	at freemarker.core.Environment.visit(Environment.java:265)
+	at freemarker.core.Environment.process(Environment.java:243)
+	at freemarker.template.Template.process(Template.java:277)
+	at com.ningpai.index.util.IndexStaticizeUtil.analysisTemplate(IndexStaticizeUtil.java:64)
+	at com.ningpai.index.service.TopAndBottomService.staticizeTopFourteen(TopAndBottomService.java:1351)
+	at com.ningpai.index.service.TopAndBottomService.checkChangeTempFourteen(TopAndBottomService.java:924)
+	at com.ningpai.index.service.TopAndBottomService.getBottom(TopAndBottomService.java:290)
+	at com.junit.test.index.service.TopAndBottomServiceTest.testgetBottom191(TopAndBottomServiceTest.java:463)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at org.unitils.UnitilsJUnit3.runTest(UnitilsJUnit3.java:111)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at org.unitils.UnitilsJUnit3.runBare(UnitilsJUnit3.java:76)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:243)
+	at junit.framework.TestSuite.run(TestSuite.java:238)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+1648 DEBUG [2016-09-13 20:38:27]  Could not find template in cache, creating new one; id=["index14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1649 DEBUG [2016-09-13 20:38:27]  Compiling FreeMarker template "index14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index14_ftl.ftl"
+1689 DEBUG [2016-09-13 20:38:28]  Could not find template in cache, creating new one; id=["newheader14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1689 DEBUG [2016-09-13 20:38:28]  Compiling FreeMarker template "newheader14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader14_ftl.ftl"
+1700 DEBUG [2016-09-13 20:38:28]  Could not find template in cache, creating new one; id=["index14_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1700 DEBUG [2016-09-13 20:38:28]  Compiling FreeMarker template "index14_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index14_ftl.ftl"
+1755 DEBUG [2016-09-13 20:38:28]  Could not find template in cache, creating new one; id=["newheader_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1756 DEBUG [2016-09-13 20:38:28]  Compiling FreeMarker template "newheader_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\newheader_ftl.ftl"
+1766 DEBUG [2016-09-13 20:38:28]  Could not find template in cache, creating new one; id=["index2_ftl.ftl"["zh_CN",utf-8,parsed] ]
+1767 DEBUG [2016-09-13 20:38:28]  Compiling FreeMarker template "index2_ftl.ftl"["zh_CN",utf-8,parsed]  from "D:\\kv2\\kstore_v2\\kstore_site\\target\\test-classes\\view\\index\\index2_ftl.ftl"
+1865 WARN  [2016-09-13 20:38:28]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5bf136c6. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+3286 INFO  [2016-09-13 20:38:29]  load es index name fail use default index name 'qm-test-item'
+3993 WARN  [2016-09-13 20:38:30]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5bf136c6. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+4191 INFO  [2016-09-13 20:38:30]  �˵��ɹ����˵�����Ϊ��20160913629237
+4419 WARN  [2016-09-13 20:38:30]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5bf136c6. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+4453 WARN  [2016-09-13 20:38:30]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5bf136c6. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.

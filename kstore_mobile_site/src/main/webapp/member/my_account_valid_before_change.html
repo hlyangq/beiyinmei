@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 我的账户</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="../js/jquery-1.10.1.js"></script>
+  <script src="../js/idangerous.swiper.js"></script>
+</head>
+<body>
+
+<div class="form_title">
+  <dl>
+    <dt>请先输入登录密码以验证身份</dt>
+    <dd>&nbsp;</dd>
+  </dl>
+</div>
+<div class="member_form2">
+  <dl>
+    <dt>登录密码</dt>
+    <dd>
+      <input type="password" value="" class="text">
+    </dd>
+  </dl>
+  <dl>
+    <dt>验证码</dt>
+    <dd>
+      <input type="text" value=""  class="text">
+      <a href="javascript:;" class="show_password">
+        <img alt="" src="../images/code.png" height="34">
+      </a>
+    </dd>
+  </dl>
+</div>
+
+<div class="p10">
+  <a href="#" class="btn btn-full">下一步</a>
+</div>
+
+<script>
+  $(function(){
+
+    /* 显示密码 */
+    $('.show_password').click(function(){
+      if($(this).attr('class').indexOf('selected') > 0){
+        $(this).removeClass('selected');
+        $(this).prev().attr('type','password');
+      }
+      else{
+        $(this).addClass('selected');
+        $(this).prev().attr('type','text');
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

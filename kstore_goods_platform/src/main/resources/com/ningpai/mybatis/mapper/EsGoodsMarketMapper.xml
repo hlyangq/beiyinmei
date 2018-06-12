@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.search.dao.EsGoodsMarketingMapper" >
+    <resultMap id="BaseScopeResultMap" type="com.ningpai.goods.bean.EsMarketingScope" >
+        <id column="marketing_scope_id" property="marketingScopeId" jdbcType="BIGINT" />
+        <result column="marketing_id" property="marketingId" jdbcType="BIGINT" />
+        <result column="scope_id" property="scopeId" jdbcType="BIGINT" />
+        <result column="scope_type" property="scopeType" jdbcType="CHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="mod_time" property="modTime" jdbcType="TIMESTAMP" />
+        <result column="flag" property="flag" jdbcType="CHAR" />
+    </resultMap>
+
+    <resultMap id="BaseMarketingResultMap" type="com.ningpai.goods.bean.EsMarketing">
+        <id column="marketing_id" property="marketingId" jdbcType="BIGINT" />
+        <result column="marketing_name" property="marketingName"
+                jdbcType="VARCHAR" />
+        <result column="marketing_des" property="marketingDes"
+                jdbcType="VARCHAR" />
+        <result column="codex_name" property="codexName"
+                jdbcType="VARCHAR" />
+        <result column="is_repeat" property="isRepeat"
+                jdbcType="CHAR" />
+        <result column="marketing_type" property="marketingType"
+                jdbcType="CHAR" />
+        <result column="marketing_begin" property="marketingBegin"
+                jdbcType="TIMESTAMP" />
+        <result column="marketing_end" property="marketingEnd"
+                jdbcType="TIMESTAMP" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="mod_time" property="modTime" jdbcType="TIMESTAMP" />
+        <result column="flag" property="flag" jdbcType="CHAR" />
+        <result column="is_all" property="isAll" jdbcType="CHAR" />
+        <result column="codex_id" property="codexId" jdbcType="BIGINT" />
+        <result column="codex_type" property="codexType" jdbcType="CHAR" />
+        <result column="business_id" property="businessId" jdbcType="BIGINT" />
+        <result column="third_id" property="thirId" jdbcType="BIGINT" />
+        <result column="preferential_name" property="preferentialName" jdbcType="VARCHAR" />
+        <result column="info_realname" property="infoRealname" jdbcType="VARCHAR" />
+        <result column="group_id" property="groupId" jdbcType="BIGINT" />
+        <result column="m_group_id" property="marketGroupId" jdbcType="BIGINT" />
+        <result column="add_give_type" property="addGiveType" jdbcType="CHAR" />
+        <result column="give_integral" property="giveIntegral" jdbcType="INTEGER" />
+        <result column="coupon_id" property="couponId" jdbcType="BIGINT" />
+        <result column="active_site_type" property="activeSiteType" jdbcType="CHAR" />
+        <result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+        <result column="shipping_money" property="shippingMoney" jdbcType="DECIMAL" />
+    </resultMap>
+
+
+    <sql id="Base_Scope_Column_List" >
+        marketing_scope_id, marketing_id, scope_id, scope_type, create_time, mod_time, flag
+    </sql>
+
+
+    <!-- 查询货品参加的可用促销 -->
+    <select id="selectMarketScopeByMapMay" resultMap="BaseScopeResultMap" parameterType="java.util.Map" >
+        SELECT
+        scope.marketing_scope_id, scope.marketing_id, scope.scope_id, scope.scope_type, scope.create_time, scope.mod_time, scope.flag
+        FROM np_marketing_scope scope,np_marketing mar WHERE mar.marketing_id = scope.marketing_id
+        and  <![CDATA[ mar.marketing_begin <= now() and  mar.marketing_end   > now() ]]>
+        and mar.marketing_type='0' and  scope.flag = '0' and mar.flag = '0'
+        AND   ((scope.scope_id = #{goodsInfoId} AND scope.scope_type = '2') OR  (scope.scope_id = #{brandId} AND scope.scope_type = '1') OR  (scope.scope_id = #{cateId} AND scope.scope_type = '0')) GROUP BY scope.marketing_id
+    </select>
+
+    <!-- 查询促销详细信息 -->
+    <select id="marketingDetail" resultMap="BaseMarketingResultMap"
+            parameterType="java.lang.Long">
+        select mgroup.preferential_name,mgroup.group_id, m.marketing_id, m.marketing_name,m.shipping_money,
+        m.marketing_des, m.marketing_type, m.marketing_begin,
+        m.marketing_end,m.is_repeat,
+        m.create_time, m.mod_time, m.flag,m.is_all,codex.codex_name,codex.codex_id,codex.codex_type
+        from np_marketing m ,np_marketing_codex mc,np_codex codex,np_marketing_group mgroup
+        where m.marketing_id = mc.marketing_id and mc.codex_id = codex.codex_id  and mc.flag='0'
+        and codex.codex_status=mgroup.group_id
+        and m.marketing_id = #{marketingId,jdbcType=BIGINT}
+        and <![CDATA[ m.marketing_begin <= now() and  m.marketing_end   > now() ]]>
+    </select>
+
+</mapper>

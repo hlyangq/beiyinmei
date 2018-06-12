@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.web.dao.BackGoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.ningpai.order.bean.BackGoods" >
+    <id column="back_goods_id" property="backGoodsId" jdbcType="BIGINT" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
+    <result column="back_order_id" property="backOrderId" jdbcType="BIGINT" />
+    <result column="back_goods_price" property="backGoodsPrice" jdbcType="DECIMAL" />
+    <result column="goods_info_id" property="goodsInfoId" jdbcType="BIGINT" />
+    <result column="business_id" property="businessId" jdbcType="BIGINT" />
+    <result column="cat_id" property="catId" jdbcType="BIGINT" />
+    <result column="goods_info_num" property="goodsInfoNum" jdbcType="BIGINT" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="back_goods_time" property="backGoodsTime" jdbcType="TIMESTAMP" />
+    <result column="back_sturts" property="backSturts" jdbcType="CHAR" />
+    <result column="cat_rate" property="cateRate" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    back_goods_id, order_id, back_order_id, goods_info_id, business_id, cat_id, goods_info_num, back_goods_price,
+    del_flag, back_goods_time, back_sturts
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from np_back_goods
+    where back_goods_id = #{backGoodsId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from np_back_goods
+    where back_goods_id = #{backGoodsId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ningpai.order.bean.BackGoods" >
+    insert into np_back_goods (back_goods_id, order_id, back_order_id, 
+      goods_info_id, business_id, cat_id, 
+      goods_info_num, del_flag, back_goods_time, 
+      back_sturts,back_goods_price)
+    values (#{backGoodsId,jdbcType=BIGINT}, #{orderId,jdbcType=BIGINT}, #{backOrderId,jdbcType=BIGINT}, 
+      #{goodsInfoId,jdbcType=BIGINT}, #{businessId,jdbcType=BIGINT}, #{catId,jdbcType=BIGINT}, 
+      #{goodsInfoNum,jdbcType=BIGINT}, #{delFlag,jdbcType=CHAR}, #{backGoodsTime,jdbcType=TIMESTAMP}, 
+      #{backSturts,jdbcType=CHAR}), #{backGoodsPrice,jdbcType=DECIMAL}
+  </insert>
+  <insert id="insertSelective" parameterType="com.ningpai.order.bean.BackGoods" >
+    insert into np_back_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="backGoodsId != null" >
+        back_goods_id,
+      </if>
+      <if test="orderId != null" >
+        order_id,
+      </if>
+      <if test="backOrderId != null" >
+        back_order_id,
+      </if>
+      <if test="goodsInfoId != null" >
+        goods_info_id,
+      </if>
+      <if test="businessId != null" >
+        business_id,
+      </if>
+      <if test="catId != null" >
+        cat_id,
+      </if>
+      <if test="goodsInfoNum != null" >
+        goods_info_num,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="backGoodsTime != null" >
+        back_goods_time,
+      </if>
+      <if test="backSturts != null" >
+        back_sturts,
+      </if>
+      <if test="backGoodsPrice != null" >
+          back_goods_price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="backGoodsId != null" >
+        #{backGoodsId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="backOrderId != null" >
+        #{backOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsInfoId != null" >
+        #{goodsInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null" >
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="catId != null" >
+        #{catId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsInfoNum != null" >
+        #{goodsInfoNum,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="backGoodsTime != null" >
+        #{backGoodsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backSturts != null" >
+        #{backSturts,jdbcType=CHAR},
+      </if>
+      <if test="backGoodsPrice != null" >
+        #{backGoodsPrice,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ningpai.order.bean.BackGoods" >
+    update np_back_goods
+    <set >
+      <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="backOrderId != null" >
+        back_order_id = #{backOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsInfoId != null" >
+        goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
+      </if>
+      <if test="businessId != null" >
+        business_id = #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="catId != null" >
+        cat_id = #{catId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsInfoNum != null" >
+        goods_info_num = #{goodsInfoNum,jdbcType=BIGINT},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="backGoodsTime != null" >
+        back_goods_time = #{backGoodsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backSturts != null" >
+        back_sturts = #{backSturts,jdbcType=CHAR},
+      </if>
+      <if test="backGoodsPrice != null" >
+        back_goods_price = #{backGoodsPrice,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where back_goods_id = #{backGoodsId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ningpai.order.bean.BackGoods" >
+    update np_back_goods
+    set order_id = #{orderId,jdbcType=BIGINT},
+      back_order_id = #{backOrderId,jdbcType=BIGINT},
+      goods_info_id = #{goodsInfoId,jdbcType=BIGINT},
+      business_id = #{businessId,jdbcType=BIGINT},
+      cat_id = #{catId,jdbcType=BIGINT},
+      goods_info_num = #{goodsInfoNum,jdbcType=BIGINT},
+      del_flag = #{delFlag,jdbcType=CHAR},
+      back_goods_time = #{backGoodsTime,jdbcType=TIMESTAMP},
+      back_goods_price = #{backGoodsPrice,jdbcType=DECIMAL},
+      back_sturts = #{backSturts,jdbcType=CHAR}
+    where back_goods_id = #{backGoodsId,jdbcType=BIGINT}
+  </update>
+
+    <!-- 查询订单商品列表 -->
+    <select id="selectBackGoodsLsit" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        SELECT
+            bg.back_goods_id,
+            bg.order_id,
+            bg.back_order_id,
+            bg.goods_info_id,
+            bg.business_id,
+            bg.cat_id,
+            bg.goods_info_num,
+            bg.back_goods_price,
+            bg.del_flag,
+            bg.back_goods_time,
+            bg.back_sturts,
+            cate.cat_rate
+        FROM
+            np_back_goods bg
+        INNER JOIN np_goods_info i ON bg.goods_info_id = i.goods_info_id
+        INNER JOIN np_goods g ON i.goods_id = g.goods_id
+        INNER JOIN np_goods_category cate ON g.cat_id = cate.cat_id
+        WHERE
+          bg.back_order_id = #{back_order_id,jdbcType=BIGINT}
+    </select>
+</mapper>

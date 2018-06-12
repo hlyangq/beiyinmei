@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 我的账户</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="http://pic.ofcard.com/astore/wei-store/js/jquery-1.10.1.js"></script>
+  <script src="http://pic.ofcard.com/astore/wei-store/js/idangerous.swiper.js"></script>
+</head>
+<body>
+
+<div class="member_form">
+  <dl>
+    <dt>收货人</dt>
+    <dd>
+      <input type="text" value="" class="text">
+    </dd>
+  </dl>
+  <dl>
+    <dt>手机号码</dt>
+    <dd>
+      <input type="text" value="" class="text">
+    </dd>
+  </dl>
+  <dl>
+    <dt>所在地区</dt>
+    <dd>
+      <a href="javascript:;" class="choose_area">
+        <span class="local">请选择</span>
+        <i class="ion-ios-arrow-right"></i>
+      </a>
+    </dd>
+  </dl>
+  <dl>
+    <dt>详细地址</dt>
+    <dd>
+      <textarea rows="4" class="text"></textarea>
+    </dd>
+  </dl>
+  <dl class="check_item">
+    <dt>设为默认</dt>
+    <dd>
+      <div class="fr mr15">
+        <div class="checkbox selected">
+          <input type="checkbox">
+        </div>
+      </div>
+    </dd>
+  </dl>
+</div>
+
+<div class="p10">
+  <div class="col-12">
+    <div class="pr15">
+      <a href="my_account_address_list.html" class="btn btn-full-grey">取消</a>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="pl15">
+      <a href="my_account_address_list.html" class="btn btn-full">保存</a>
+    </div>
+  </div>
+</div>
+
+<div class="screen" style="display:none">
+  <div class="screen-header">
+    <a class="back" href="javascript:;"><i class="back-icon"></i></a>
+    选择省份
+  </div>
+  <div class="screen-cont">
+    <ul class="areas">
+      <li class="selected">
+        <span>北京</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>天津</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>河北省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>陕西省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>内蒙古自治区</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>辽宁省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>吉林省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>黑龙江省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>上海</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>江苏省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>浙江省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>安徽省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>陕西省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>内蒙古自治区</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>辽宁省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>吉林省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>黑龙江省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>上海</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>江苏省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>浙江省</span>
+        <i class="ion-android-done"></i>
+      </li>
+      <li>
+        <span>安徽省</span>
+        <i class="ion-android-done"></i>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $(function(){
+
+    /* 选择性别 */
+    $('.gender_set').click(function(){
+      if($('.opacity-bg-3').length == 0){
+        $('body').append('<div class="opacity-bg-3"></div>');
+        $('.gender_choose').show();
+      }
+    });
+    $('a.gender_close').click(function(){
+      $('.opacity-bg-3').remove();
+      $('.gender_choose').hide();
+    });
+
+    /* 选择省份 */
+    $('.choose_area').click(function(){
+      if($('.opacity-bg-3').length == 0){
+        $('body').append('<div class="opacity-bg-3"></div>');
+        $('.screen').show();
+      }
+    });
+    $('a.back').click(function(){
+      $('.opacity-bg-3').remove();
+      $('.screen').hide();
+    });
+
+    /* 滑动选框 */
+    $('.checkbox').click(function(){
+      $(this).toggleClass('selected');
+    });
+
+  });
+</script>
+</body>
+</html>

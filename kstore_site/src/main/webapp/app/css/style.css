@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    font-family: "Helvetica Neue",
+    "Helvetica",
+    "tahoma",
+    "arial",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+    font-size: 62.5%;
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background: url(./bg.jpg) no-repeat center center;
+    background-size: 100% 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.header {
+    text-align: center;
+}
+.title {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 500;
+    margin: 50px 0 20px 0;
+}
+.sec-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+.description {
+    color: #fff;
+    line-height: 180%;
+    margin: 0;
+    font-size: 1.7rem;
+}
+.download-box {
+    width: 100%;
+    text-align: center;
+}
+.download-title {
+    color: #fff;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+.ios-download, .android-download {
+    display: block;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.ios-download i, .android-download i {
+    width: 35px;
+    height: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.ios-download {
+    background-color: #e6a905;
+    color: #fff;
+}
+.android-download {
+    background-color: #fdecef;
+    color: #e63a59;
+}
+.ios-download i {
+    background-image: url(./apple.png);
+}
+.android-download i {
+    background-image: url(./android.png);
+}
+.tip_dialog {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    display: none;
+}
+.tip {
+    width: 80%;
+    height: 100px;
+    margin: 10px auto 0;
+    padding-top: 100px;
+    text-align: center;
+    color: #fff;
+    background: url(./pop.png) no-repeat center center;
+    background-size: 100%;
+}
+.tip p {
+    font-size: 1.5rem;
+    line-height: 200%;
+}
+.dots {
+    height: 6px;
+    vertical-align: middle;
+}
+.close_box {
+    text-align: center;
+    margin: 150px auto 0;
+}
+.close_btn {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 15px 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.mobile.dao.MobPageCateMapper">
+    <resultMap id="BaseResultMap" type="com.ningpai.mobile.bean.MobPageCate">
+        <id column="page_cate_id" property="pageCateId" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="delflag" property="delflag" jdbcType="CHAR"/>
+        <result column="create_user_id" property="createUserId" jdbcType="BIGINT"/>
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="update_user_id" property="updateUserId" jdbcType="BIGINT"/>
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.ningpai.mobile.bean.MobPageCate" extends="BaseResultMap">
+        <result column="content" property="content"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        page_cate_id, name, delflag, create_user_id, create_date, update_user_id, update_date
+    </sql>
+
+    <sql id="Blob_Column_List">
+        remark
+    </sql>
+
+    <sql id="Base_Where_sql">
+        <if test="delflag != null and delflag != '' ">
+            and delflag = #{delflag}
+        </if>
+        <if test="name  != null and name  != '' ">
+            and name like CONCAT('%', #{name},'%')
+        </if>
+    </sql>
+
+    <!-- 分页查询 -->
+    <select id="selectByPageBean" resultMap="ResultMapWithBLOBs" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from np_mob_page_cate
+        where 1 = 1
+        <include refid="Base_Where_sql"/>
+        order by update_date desc
+        limit #{startRowNum},#{endRowNum}
+    </select>
+
+    <!-- 查询总行数 -->
+    <select id="selectCount" resultType="int" parameterType="java.util.Map">
+        select count(1) from np_mob_page_cate
+        where 1 = 1
+        <include refid="Base_Where_sql"/>
+    </select>
+
+    <!-- 根据ID查看 -->
+    <select id="selectById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from np_mob_page_cate
+        where page_cate_id = #{pageCateId,jdbcType=BIGINT}
+    </select>
+
+    <!-- 查询所有专题 -->
+    <select id="selectAll" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from np_mob_page_cate where 1=1
+        <include refid="Base_Where_sql"/>
+        order by create_date desc,update_date desc
+    </select>
+    <!-- 查询结束 -->
+
+    <!-- 批量删除 -->
+    <update id="deleteByList" parameterType="java.util.List">
+        update np_mob_page_cate set delflag = '1'
+        where page_cate_id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <insert id="insert" parameterType="com.ningpai.mobile.bean.MobPageCate" useGeneratedKeys="true" keyProperty="pageCateId">
+        insert into np_mob_page_cate (page_cate_id, name, remark, delflag,create_user_id, create_date, update_user_id, update_date)
+        values (#{pageCateId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR},#{remark,jdbcType=VARCHAR}, #{delflag,jdbcType=CHAR},
+          #{createUserId,jdbcType=BIGINT}, #{createDate,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=BIGINT},#{updateDate,jdbcType=TIMESTAMP})
+     </insert>
+
+    <update id="updateByPrimaryKey" parameterType="com.ningpai.mobile.bean.MobPageCate">
+        update np_mob_page_cate
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="delflag != null">
+                delflag = #{delflag,jdbcType=CHAR},
+            </if>
+            <if test="createUserId != null">
+                create_user_id = #{createUserId,jdbcType=BIGINT},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateUserId != null">
+                update_user_id = #{updateUserId,jdbcType=BIGINT},
+            </if>
+            <if test="updateDate != null">
+                update_date = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where page_cate_id = #{pageCateId,jdbcType=BIGINT}
+    </update>
+
+</mapper>

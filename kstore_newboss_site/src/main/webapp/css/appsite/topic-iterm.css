@@ -1,0 +1,91 @@
+.topic-item {
+    padding: 10px;
+}
+.item-title {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+.item-title:before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    background-size: 100%;
+}
+.item-title:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-size: 100%;
+}
+.item-content {
+    padding: 30px 5px 0;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    margin-top: -20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-box {
+    width: calc(100% / 2 - 10px);
+    margin: 0 5px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.item-img {
+    padding: 5px;
+    background-color: #fff;
+}
+.item-box img {
+    width: 187px;
+    height: 187px;
+}
+.item-info {
+    padding: 10px;
+}
+.item-name {
+    color: #fff;
+    height: 40px;
+    overflow: hidden;
+}
+.bt-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.item-price {
+    color: #fff600;
+}
+.item-price strong {
+    font-size: 16px;
+}
+.buy-btn {
+    background-color: #fff600;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+.control-label {
+    font-weight: 400;
+    margin-right: 10px;
+}
+.add_img {
+    display: inline-block;
+    margin-top: 10px;
+}

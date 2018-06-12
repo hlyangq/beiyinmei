@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+.sessions-new {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    overflow: hidden;
+    background-size: 70%;
+}
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+}
+.login_box {
+    box-sizing: border-box;
+    width: 320px;
+    padding: 50px 20px 10px;
+    border-radius: 3px;
+    background: rgba(0,0,0,.5);
+}
+.login_box .form-signin-heading {
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    background: none;
+}
+.login_box .input-group-addon {
+    display: none;
+}
+.login_box .form-group {
+    margin-bottom: 0;
+}
+.login_box .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.form-signin .form-control {
+    width: 100%;
+    border-radius: 3px!important;
+    border: 1px solid #dfe1e8;
+    font-size: 14px;
+    font-weight: 200;
+    box-shadow: none;
+}
+.code_text {
+    flex: 1;
+}
+.login_box .btn-primary {
+    background: #252328;
+    border-radius: 3px;
+    font-size: 14px;
+    border-color: #252328;
+    height: 42px;
+}
+.login_box .btn-primary:active, .login_box .btn-primary:focus {
+    outline: none;
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.m.deposit.mapper.DepositInfoMapper" >
+	<resultMap id="BaseResultMap" type="com.ningpai.m.deposit.bean.DepositInfo" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="customer_id" property="customerId" jdbcType="BIGINT" />
+		<result column="pre_deposit" property="preDeposit" jdbcType="DECIMAL" />
+		<result column="freeze_pre_deposit" property="freezePreDeposit" jdbcType="DECIMAL" />
+		<result column="pay_password" property="payPassword" jdbcType="VARCHAR" />
+		<result column="password_error_count" property="passwordErrorCount" jdbcType="INTEGER" />
+		<result column="password_time" property="passwordTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		id,customer_id,pre_deposit,freeze_pre_deposit,pay_password,
+		password_error_count,password_time
+	</sql>
+
+	<insert id="insertSelective" parameterType="com.ningpai.m.deposit.bean.DepositInfo" useGeneratedKeys="true" keyProperty="id" >
+		insert into np_deposit_info
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				id,
+			</if>
+			<if test="customerId != null" >
+				customer_id,
+			</if>
+			<if test="preDeposit != null" >
+				pre_deposit,
+			</if>
+			<if test="freezePreDeposit != null" >
+				freeze_pre_deposit,
+			</if>
+			<if test="payPassword != null" >
+				pay_password,
+			</if>
+			<if test="passwordErrorCount != null" >
+				password_error_count,
+			</if>
+			<if test="passwordTime != null" >
+				password_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="customerId != null" >
+				#{customerId,jdbcType=BIGINT},
+			</if>
+			<if test="preDeposit != null" >
+				#{preDeposit,jdbcType=DECIMAL},
+			</if>
+			<if test="freezePreDeposit != null" >
+				#{freezePreDeposit,jdbcType=DECIMAL},
+			</if>
+			<if test="payPassword != null" >
+				#{payPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="passwordErrorCount != null" >
+				#{passwordErrorCount,jdbcType=INTEGER},
+			</if>
+			<if test="passwordTime != null" >
+				#{passwordTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+
+	<!--修改预存款信息-->
+	<update id="updateDepositInfo" parameterType="com.ningpai.m.deposit.bean.DepositInfo">
+		update np_deposit_info
+		<set>
+			<if test="preDeposit != null">
+				pre_deposit=#{preDeposit,jdbcType=DECIMAL},
+			</if>
+			<if test="freezePreDeposit != null">
+				freeze_pre_deposit=#{freezePreDeposit,jdbcType=DECIMAL},
+			</if>
+			<if test="payPassword != null">
+				pay_password=#{payPassword,jdbcType=VARCHAR},
+			</if>
+			<if test="passwordErrorCount != null">
+				password_error_count=#{passwordErrorCount,jdbcType=INTEGER},
+			</if>
+			<if test="passwordTime != null">
+				password_time=#{passwordTime,jdbcType=TIMESTAMP}
+			</if>
+		</set>
+		WHERE customer_id = #{customerId,jdbcType=BIGINT}
+	</update>
+	<!--根据客户ID查询会员预存款信息，用于修改-->
+	<select id="selectDepositByCustId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		d.customer_id,
+		d.pre_deposit,
+		d.freeze_pre_deposit,
+		d.pay_password,
+		d.password_error_count
+		from np_deposit_info d
+		where d.customer_id = #{customerId,jdbcType=BIGINT}
+	</select>
+</mapper>

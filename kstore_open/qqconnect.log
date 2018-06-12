@@ -1,0 +1,10 @@
+0    WARN  [2016-06-27 15:42:08]  No custom configuration file unitils.properties found.
+1    INFO  [2016-06-27 15:42:08]  No local configuration file unitils-local.properties found.
+46   DEBUG [2016-06-27 15:42:08]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+46   DEBUG [2016-06-27 15:42:08]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+58   DEBUG [2016-06-27 15:42:08]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+61   DEBUG [2016-06-27 15:42:08]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+63   DEBUG [2016-06-27 15:42:08]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+70   DEBUG [2016-06-27 15:42:08]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+75   DEBUG [2016-06-27 15:42:08]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+149  DEBUG [2016-06-27 15:42:08]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager

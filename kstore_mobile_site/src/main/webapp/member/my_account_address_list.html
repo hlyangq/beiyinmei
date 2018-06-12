@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 我的账户</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="../js/jquery-1.10.1.js"></script>
+  <script src="../js/idangerous.swiper.js"></script>
+</head>
+<body>
+
+<div class="address_list">
+  <div class="address_item">
+    <a href="my_account_address_edit.html">
+      <h4>
+        <span>周庆斌</span>
+        <span>13911111111</span>
+      </h4>
+      <p>
+        <span>【默认】</span>
+        江苏省南京市雨花台区软件大道
+      </p>
+      <i class="ion-ios-arrow-right"></i>
+    </a>
+    <a href="javascript:;" class="delete_btn">删除</a>
+  </div>
+  <div class="address_item">
+    <a href="my_account_address_edit.html">
+      <h4>
+        <span>周庆斌</span>
+        <span>13911111111</span>
+      </h4>
+      <p>
+        江苏省南京市雨花台区软件大道
+      </p>
+      <i class="ion-ios-arrow-right"></i>
+    </a>
+    <a href="javascript:;" class="delete_btn">删除</a>
+  </div>
+</div>
+
+<div class="bottom-fixed p10">
+  <a href="my_account_address_add.html" class="btn btn-full">+ 新增收货地址</a>
+</div>
+
+<script>
+  $(function(){
+
+    /* 滑动显示编辑按钮 */
+    for(var i = 0;i<$('.address_item').length;i++){
+      var obj = $('.address_item')[i];
+      var startX = 0;
+      obj.addEventListener('touchstart',function(e){
+        startX = e.targetTouches[0].clientX;
+      },false);
+      obj.addEventListener('touchmove',function(e){
+        var moveX = e.changedTouches[0].clientX - startX;
+        if(moveX < 0 && moveX >= -77){
+          this.style.marginLeft = moveX + 'px';
+        }
+        else if((parseInt(this.style.marginLeft) + moveX < 0) && moveX > 0){
+          var oldLeft = parseInt(this.style.marginLeft);
+          this.style.marginLeft = oldLeft + moveX + 'px';
+        }
+      },false);
+      obj.addEventListener('touchend',function(e){
+        if(parseInt(this.style.marginLeft) > -44 || !this.style.marginLeft){
+          this.style.marginLeft = '0';
+        }
+        else{
+          this.style.marginLeft = '-77px';
+        }
+      },false);
+    }
+
+  });
+</script>
+</body>
+</html>

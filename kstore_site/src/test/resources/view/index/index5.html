@@ -1,0 +1,123 @@
+<input type="hidden" id="isIndex" value="1"/>
+<div id="wrapper">
+   <div id="content">
+		<div id="slides">
+        </div>
+
+		<div class="section-01">
+                <div class="left">
+                    <div class="topShows">
+                                            
+                    </div>
+                    <div class="brands">
+                        <h3><strong>品牌</strong>BRANDS</h3>
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="news">
+                        <div class="tit"><h3>公告</h3></div>
+                        <div class="cont">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="firAdv">
+                    </div>
+                    <div class="secAdv">
+                    </div>
+                </div>
+            </div>
+
+			 <div class="section-02">
+                <div class="title">
+                    <h3>热门推荐</h3>
+                    <a class="changeBtn" href="javascript:;">换一组</a>
+                </div>
+                <div class="recommend-wp">
+                </div>
+            </div>
+
+    </div><!--content-->
+</div><!--wrapper -->
+<div class="side-bar">
+            <b></b>
+            <div class="cartfd">
+                <s class="cartBanner"></s>
+                <div class="cartit">
+                    <span><s></s>购物车</span>
+                    <strong class="cartNum">0</strong>
+                </div>
+                <div class="miniCart hide">
+                    <div class="mCartBox">
+                        <!-- mcBoxTop 居上，滚动时依然居上mcFloat展示 -->
+                        <div class="mcBoxTop clearfix">
+                            <div class="mcChk"><input type="checkbox" /></div>
+                            <label for="" class="mcElect">全选</label>
+                        </div>
+                        <div class="mcBoxList cart_list">
+                          
+                          
+                            
+                        </div>
+                        
+                        
+                        <div class="emCartBox hide">
+                            <span>购物车中还没有商品，再去逛逛吧！</span>
+                        </div>
+                    </div>
+                    <div class="mcGenius bmcGenius"></div><!-- 展开加class"bmcGenius" -->
+                    <div class="mCartError"><!-- 显示错误时bottom:41px -->
+                        <p>正在为您加载数量！</p>
+                    </div>
+                    <div class="mCartHandler clearfix">
+                <span class="mcCashier">
+                    <span class="mcTotal">
+                        <span class="mcRmb">¥</span>
+                        <span class="mcTotalFee">0.00</span>
+                    </span>
+                    <span class="mcGo"><a href="/myshoppingcart.html">结算</a></span><!-- no-mcGo置灰状态 -->
+                </span>
+                        <h3><!-- "mc_e1与mcNumTotal与展开时的emCartBox"/"mc_e2与mcNumChecked与mcCashier"同时显示 -->
+                            <span class="mc_e1">购物车</span>
+                            <span class="mc_e2">共</span>
+                            <strong class="mcNumTotal">0</strong>
+                            <strong class="mcNumChecked">0</strong>
+                            <span class="mc_e2">件</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <ul class="side-nav">
+                           
+            </ul>
+            <div id="backtotop"><b></b><a><s></s><strong>返回顶部</strong></a></div>
+        </div>
+
+    </div>
+<script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_five/images/lazy_img.png",
+				skip_invisible: false
+			});
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+

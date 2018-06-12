@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ningpai.customer.dao.ChargeWithdrawMapper">
+
+    <!-- 提现表映射 -->
+    <resultMap type="com.ningpai.customer.bean.ChargeWithdraw" id="ChargeWithdrawMap">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="trade_info_id" property="tradeInfoId" jdbcType="BIGINT"/>
+        <result column="customer_id" property="customerId" jdbcType="BIGINT"/>
+        <result column="account_name" property="accountName" jdbcType="VARCHAR"/>
+        <result column="bank_no" property="bankNo" jdbcType="VARCHAR"/>
+        <result column="customer_username" jdbcType="VARCHAR" property="customerUsername"/>
+        <result column="contact_mobile" property="contactMobile" jdbcType="VARCHAR"/>
+        <result column="bank_name" property="bankName" jdbcType="VARCHAR"/>
+        <result column="receiving_bank" property="receivingBank" jdbcType="BIGINT"/>
+        <result column="amount" property="amount" jdbcType="DECIMAL"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="order_code" property="orderCode" jdbcType="VARCHAR"/>
+        <result column="order_status" property="orderStatus" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="pay_bill_num" property="payBillNum" jdbcType="VARCHAR"/>
+        <result column="reviewed_remark" property="reviewedRemark" jdbcType="VARCHAR"/>
+        <result column="certificate_img" property="certificateImg" jdbcType="VARCHAR"/>
+        <result column="pay_remark" property="payRemark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- 提现表总数，用于分页 -->
+    <select id="selectTotalChargeWithdraw" resultType="java.lang.Long" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+          count(d.id)
+        from np_charge_withdraw d
+        left join np_trade_info t on d.trade_info_id = t.id
+        left join np_customer c on d.customer_id = c.customer_id
+        where t.order_type = '2'
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="orderStatus != null and orderStatus != ''">
+            and t.order_status = #{orderStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="orderCode != null and orderCode != ''">
+            and t.order_code like CONCAT(CONCAT('%', #{orderCode,jdbcType=VARCHAR}),'%')
+        </if>
+    </select>
+    <!-- 高级查询 提现列表查询 -->
+    <select id="selectChargeWithdrawList" resultMap="ChargeWithdrawMap" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+            w.id,
+            w.customer_id,
+            w.trade_info_id,
+            t.order_code,
+            w.create_time,
+            c.customer_username,
+            case when w.bank_name='' then b.bank_name else w.bank_name end as bank_name,
+            w.bank_no,
+            w.account_name,
+            w.contact_mobile,
+            w.amount,
+            t.order_status,
+            w.remark,
+            t.reviewed_remark,
+            t.pay_bill_num,
+            t.certificate_img,
+            t.pay_remark,
+            t.update_time
+        from np_charge_withdraw w
+        left join np_bank_info b on w.receiving_bank = b.id
+        left join np_trade_info t on w.trade_info_id = t.id
+        left join np_customer c on w.customer_id = c.customer_id
+        where t.order_type = '2'
+        <if test="withdrawId != null and withdrawId != ''">
+            and w.id = #{withdrawId,jdbcType=BIGINT}
+        </if>
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="orderStatus != null and orderStatus != ''">
+            and t.order_status = #{orderStatus,jdbcType=VARCHAR}
+        </if>
+        <if test="orderCode != null and orderCode != ''">
+            and t.order_code like CONCAT(CONCAT('%', #{orderCode,jdbcType=VARCHAR}),'%')
+        </if>
+        order by w.create_time desc
+        limit #{startRowNum},#{endRowNum}
+    </select>
+
+</mapper>

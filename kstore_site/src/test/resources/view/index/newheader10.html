@@ -1,0 +1,56 @@
+
+<style>
+    .divhide{
+        display: none;
+    }
+</style>
+<div class="section-header">
+            <div class="content">
+                <div class="mainnav">
+                    <div class="home">
+                    </div>
+                    <div class="navLinks nav1">
+                        <ul>
+                        </ul>
+                    </div><!--navLinks-->
+                    <div class="search searchdiv right">
+                        <form class="mallSearch-form" action="/goods/searchproduct2.html" method="get">
+                            <div class="mallSearch-input">
+                                <label for=""></label>
+                                <input class="inputSearch" name="title" type="text" placeholder=""/>
+                                <button class="btnSearch" type="button" onclick="checkSearch()"></button>
+                            </div>
+                        </form>
+                    </div><!--search-->
+                    <div class="navLinks nav2" style="float:right; border-left:1px solid #eee; padding-left:0px;">
+                        <ul>
+                        </ul>
+                    </div><!--navLinks-->
+
+
+                    <input type="hidden" id="tempcbshowflag" value="">
+                <div class="showlist">
+                        <strong class="btnnav menucat">
+                            <a class="hover" href="javascript:;">
+                                全部商品分类
+                            </a>
+                        </strong>
+                    </div><!--showlist-->
+                </div><!--mainnav-->
+            </div><!--content-->
+        </div><!--section-header-->
+        
+<script type="text/javascript">
+       function clickNav(url,sort){ 
+            $.ajax({ url:"/navsort.htm?navsort="+sort, async:false ,success: function(date){
+                }
+            }); 
+            //window.location.href="/"+url;
+           if(url.indexOf("ttp://")!=-1){
+               window.open(url);
+           }else{
+               window.open("/"+url);
+           }
+
+        }
+</script>    

@@ -1,0 +1,35 @@
+<input type="hidden" id="isIndex" value="1"/>
+<div class="show-box">
+        <div id="slides">
+        </div><!--slides-->
+</div><!--show-box-->
+
+    <div id="content">
+        <div class="Bargain">
+            
+            <div class="item-img">
+                <h1>公告</h1>
+                <ul>
+                </ul>
+            </div>
+        </div><!--Bargain-->
+        
+           <!-- </div><!--pro-con-->
+        <!--</div><!--proLists03-->
+    </div><!--content-->
+    
+
+ <script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_thirteen/images/lazy_img.png",
+				skip_invisible: false
+			});
+			
+			
+});
+</script>

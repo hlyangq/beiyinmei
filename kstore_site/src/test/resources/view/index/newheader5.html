@@ -1,0 +1,39 @@
+<style>
+    .divhide{
+        display: none;
+    }
+    </style>
+<input type="hidden" id="basePath" value=""/>
+        <div class="mainnav">
+            <div class="navLinks">
+               <ul class="sort_list clearfix">
+            </ul><!--/sort_list-->
+            </div>
+            <input type="hidden" id="tempcbshowflag" value="">
+    <div class="showlist">
+                <strong class="btnnav menucat"><a class="hover" href="javascript:;">全部商品分类</a></strong>
+                <ul class="list dropdown-menu">
+                </ul>
+           
+            </div><!--showlist-->
+        </div><!--mainnav-->
+    </div><!--content-->
+</div><!--section-header-->
+    <script type="text/javascript">
+       function clickNav(url,sort){ 
+            $.ajax({ url:"/navsort.htm?navsort="+sort, async:false ,success: function(date){
+                }
+            }); 
+            //window.location.href="/"+url;
+           if(url.indexOf("ttp://")!=-1){
+               window.open(url);
+           }else{
+               window.open("/"+url);
+           }
+        }
+        </script>
+        <script type="text/javascript" src="/index_two/js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="/index_two/js/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="/index_two/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/js/jsOperation.js"></script>
+    <script type="text/javascript" src="/index_two/js/index.js"></script>

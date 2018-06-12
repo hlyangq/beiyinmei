@@ -1,0 +1,63 @@
+0    INFO  [2016-06-27 15:40:35]  No local configuration file unitils-local.properties found.
+49   DEBUG [2016-06-27 15:40:35]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+49   DEBUG [2016-06-27 15:40:35]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+65   DEBUG [2016-06-27 15:40:35]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+69   DEBUG [2016-06-27 15:40:35]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+72   DEBUG [2016-06-27 15:40:35]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+103  DEBUG [2016-06-27 15:40:35]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+107  DEBUG [2016-06-27 15:40:35]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+174  DEBUG [2016-06-27 15:40:35]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+6486 INFO  [2016-06-27 15:40:41]  ------------------------------没错，发送成功了------------------------------
+13183 INFO  [2016-06-27 15:40:48]  删除关注信息SUCC，删除的关注ID为：1
+13188 INFO  [2016-06-27 15:40:48]  批量删除关注信息SUCC
+13295 INFO  [2016-06-27 15:40:48]  删除商品品牌SUCC1
+13303 INFO  [2016-06-27 15:40:48]  批量删除商品品牌SUCC1
+13318 INFO  [2016-06-27 15:40:48]  修改商品品牌SUCC1
+13324 INFO  [2016-06-27 15:40:48]  新建商品品牌SUCC1
+13523 INFO  [2016-06-27 15:40:48]  添加商品分类SUCC1
+13530 INFO  [2016-06-27 15:40:48]  删除商品分类SUCC1
+13540 INFO  [2016-06-27 15:40:48]  批量删除商品分类SUCC1
+13551 INFO  [2016-06-27 15:40:48]  更新商品分类SUCC1
+13708 INFO  [2016-06-27 15:40:49]  保存商品组合SUCCSEO描述
+13720 INFO  [2016-06-27 15:40:49]  更新商品组合SUCC测试
+13835 INFO  [2016-06-27 15:40:49]  保存商品图片SUCC
+13845 INFO  [2016-06-27 15:40:49]  更新商品图片SUCC测试
+14021 INFO  [2016-06-27 15:40:49]  更新到货通知状态SUCC
+14044 INFO  [2016-06-27 15:40:49]  根据货品ID更新到货通知状态SUCC
+14050 INFO  [2016-06-27 15:40:49]  新建到货通知SUCC
+14055 INFO  [2016-06-27 15:40:49]  更新到货通知SUCC
+14132 INFO  [2016-06-27 15:40:49]  保存货品关联规格信息
+14138 INFO  [2016-06-27 15:40:49]  更新货品关联规格信息SUCC
+14246 INFO  [2016-06-27 15:40:49]  根据商品ID查询货品列表
+14252 INFO  [2016-06-27 15:40:49]  根据商品ID查询货品列表
+14257 INFO  [2016-06-27 15:40:49]  批量上架活泼你SUCC1
+14260 INFO  [2016-06-27 15:40:49]  批量上架活泼你SUCC1
+14263 INFO  [2016-06-27 15:40:49]  批量显示到手机版1
+14434 INFO  [2016-06-27 15:40:49]  更新类型参数SUCC1
+14439 INFO  [2016-06-27 15:40:49]  保存类型参数SUCC1
+14442 INFO  [2016-06-27 15:40:49]  删除类型参数SUCC1
+14467 INFO  [2016-06-27 15:40:49]  更新类型参数SUCC1
+14468 INFO  [2016-06-27 15:40:49]  批量删除类型参数SUCC1
+14498 INFO  [2016-06-27 15:40:49]  保存类型关联规格SUCC1
+14502 INFO  [2016-06-27 15:40:49]  删除类型关联规格SUCC1
+14511 INFO  [2016-06-27 15:40:49]  更新类型关联规格SUCC1
+14613 INFO  [2016-06-27 15:40:50]  保存货品库存信息SUCC
+14718 INFO  [2016-06-27 15:40:50]  保存仓库信息SUCCfb
+14771 INFO  [2016-06-27 15:40:50]  更新仓库信息SUCCfb
+14846 INFO  [2016-06-27 15:40:50]  批量删除仓库信息SUCCfb
+15044 INFO  [2016-06-27 15:40:50]  elastic search 生成索引,查询商品数据...
+15048 INFO  [2016-06-27 15:40:50]  load es index name fail use default index name 'qm-test-item' 
+15049 INFO  [2016-06-27 15:40:50]  elastic search 调用接口创建索引...
+15067 INFO  [2016-06-27 15:40:50]  elastic search 创建索引成功...
+15089 INFO  [2016-06-27 15:40:50]  elastic search 查询单条数据,创建索引文档...
+15090 INFO  [2016-06-27 15:40:50]  elastic search 调用接口创建单条索引文档...
+15090 INFO  [2016-06-27 15:40:50]  elastic search 创建单条文档成功...
+15099 INFO  [2016-06-27 15:40:50]  elastic sesarch 查询单条数据,修改索引文档...
+15100 INFO  [2016-06-27 15:40:50]  elastic search 调用接口,修改单条文档...
+15101 INFO  [2016-06-27 15:40:50]  elastic search 修改单条文档成功...
+15338 DEBUG [2016-06-27 15:40:50]  0 - 1 : 1 | <NUM>
+15390 INFO  [2016-06-27 15:40:50]  response result:null
+15390 INFO  [2016-06-27 15:40:50]  convert to bean success .. the data list size is:0
+15421 INFO  [2016-06-27 15:40:50]  response result:null
+15422 INFO  [2016-06-27 15:40:50]  convert to bean success .. the data list size is:0
+23886 DEBUG [2016-06-27 15:40:59]  -----------------------------------解析完毕----------------------------------------

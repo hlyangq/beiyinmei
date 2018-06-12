@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.m.deposit.mapper.TradeInfoMapper" >
+	<resultMap id="BaseResultMap" type="com.ningpai.m.deposit.bean.TradeInfo" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="customer_id" property="customerId" jdbcType="BIGINT" />
+		<result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+		<result column="order_type" property="orderType" jdbcType="CHAR" />
+		<result column="order_status" property="orderStatus" jdbcType="CHAR" />
+		<result column="order_price" property="orderPrice" jdbcType="DECIMAL" />
+		<result column="current_price" property="currentPrice" jdbcType="DECIMAL" />
+		<result column="trade_remark" property="tradeRemark" jdbcType="VARCHAR" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="del_flag" property="delFlag" jdbcType="CHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="create_person" property="createPerson" jdbcType="BIGINT" />
+		<result column="reviewed_remark" property="reviewedRemark" jdbcType="VARCHAR" />
+		<result column="certificate_img" property="certificateImg" jdbcType="VARCHAR" />
+		<result column="pay_bill_num" property="payBillNum" jdbcType="VARCHAR" />
+		<result column="trade_source" property="tradeSource" jdbcType="VARCHAR" />
+		<result column="pay_remark" property="payRemark" jdbcType="VARCHAR" />
+	</resultMap>
+	<resultMap id="BaseResultMapVo" type="com.ningpai.m.deposit.vo.TradeInfoVo" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="customer_id" property="customerId" jdbcType="BIGINT" />
+		<result column="order_code" property="orderCode" jdbcType="VARCHAR" />
+		<result column="order_type" property="orderType" jdbcType="CHAR" />
+		<result column="order_status" property="orderStatus" jdbcType="CHAR" />
+		<result column="order_price" property="orderPrice" jdbcType="DECIMAL" />
+		<result column="current_price" property="currentPrice" jdbcType="DECIMAL" />
+		<result column="trade_remark" property="tradeRemark" jdbcType="VARCHAR" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+		<result column="del_flag" property="delFlag" jdbcType="CHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="create_person" property="createPerson" jdbcType="BIGINT" />
+		<result column="reviewed_remark" property="reviewedRemark" jdbcType="VARCHAR" />
+		<result column="certificate_img" property="certificateImg" jdbcType="VARCHAR" />
+		<result column="pay_bill_num" property="payBillNum" jdbcType="VARCHAR" />
+		<result column="trade_source" property="tradeSource" jdbcType="VARCHAR" />
+		<result column="pay_remark" property="payRemark" jdbcType="VARCHAR" />
+		<association property="chargeWithdraw" column="id" select="com.ningpai.m.deposit.mapper.ChargeWithdrawMapper.selectByTradeInfoId"></association>
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		id,customer_id,order_code,order_type,order_status,
+		order_price,current_price,trade_remark,update_time,del_flag,
+		create_time,create_person,reviewed_remark,certificate_img,pay_bill_num,
+		trade_source,pay_remark
+	</sql>
+
+	<sql id="Page_Column_List" >
+		id,order_type,order_price,create_time,order_status,order_code
+	</sql>
+
+	<insert id="insertSelective" parameterType="com.ningpai.m.deposit.bean.TradeInfo" useGeneratedKeys="true" keyProperty="id" >
+		insert into np_trade_info
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				id,
+			</if>
+			<if test="customerId != null" >
+				customer_id,
+			</if>
+			<if test="orderCode != null" >
+				order_code,
+			</if>
+			<if test="orderType != null" >
+				order_type,
+			</if>
+			<if test="orderStatus != null" >
+				order_status,
+			</if>
+			<if test="orderPrice != null" >
+				order_price,
+			</if>
+			<if test="currentPrice != null" >
+				current_price,
+			</if>
+			<if test="tradeRemark != null" >
+				trade_remark,
+			</if>
+			<if test="updateTime != null" >
+				update_time,
+			</if>
+			<if test="delFlag != null" >
+				del_flag,
+			</if>
+			<if test="createTime != null" >
+				create_time,
+			</if>
+			<if test="createPerson != null" >
+				create_person,
+			</if>
+			<if test="reviewedRemark != null" >
+				reviewed_remark,
+			</if>
+			<if test="certificateImg != null" >
+				certificate_img,
+			</if>
+			<if test="payBillNum != null" >
+				pay_bill_num,
+			</if>
+			<if test="tradeSource != null" >
+				trade_source,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="customerId != null" >
+				#{customerId,jdbcType=BIGINT},
+			</if>
+			<if test="orderCode != null" >
+				#{orderCode,jdbcType=VARCHAR},
+			</if>
+			<if test="orderType != null" >
+				#{orderType,jdbcType=CHAR},
+			</if>
+			<if test="orderStatus != null" >
+				#{orderStatus,jdbcType=CHAR},
+			</if>
+			<if test="orderPrice != null" >
+				#{orderPrice,jdbcType=DECIMAL},
+			</if>
+			<if test="currentPrice != null" >
+				#{currentPrice,jdbcType=DECIMAL},
+			</if>
+			<if test="tradeRemark != null" >
+				#{tradeRemark,jdbcType=VARCHAR},
+			</if>
+			<if test="updateTime != null" >
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="delFlag != null" >
+				#{delFlag,jdbcType=CHAR},
+			</if>
+			<if test="createTime != null" >
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="createPerson != null" >
+				#{createPerson,jdbcType=BIGINT},
+			</if>
+			<if test="reviewedRemark != null" >
+				#{reviewedRemark,jdbcType=VARCHAR},
+			</if>
+			<if test="certificateImg != null" >
+				#{certificateImg,jdbcType=VARCHAR},
+			</if>
+			<if test="payBillNum != null" >
+				#{payBillNum,jdbcType=VARCHAR},
+			</if>
+			<if test="tradeSource != null" >
+				#{tradeSource,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<!--根据交易记录展示条件（全部／收入/支出）和分页条件查询列表-->
+	<select id="queryTradeInfoPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+		SELECT <include refid="Page_Column_List" />
+		FROM np_trade_info
+		WHERE customer_id = #{customerId, jdbcType=BIGINT} AND
+		<if test="type == 1">
+			(order_type = '0' OR order_type = '1') AND
+		</if>
+		<if test="type == 2">
+			(order_type = '2' OR order_type = '3') AND
+		</if>
+		del_flag = '0'
+		ORDER BY create_time DESC
+		limit #{startRowNum}, #{endRowNum}
+	</select>
+
+	<!--根据交易记录展示条件（全部／收入/支出）和分页条件查询列表总数-->
+	<select id="queryTradeInfoPageRows" resultType="java.lang.Long" parameterType="java.util.Map">
+		SELECT COUNT(1)
+		FROM np_trade_info
+		WHERE customer_id = #{customerId, jdbcType=BIGINT} AND
+		<if test="type == 1">
+			(order_type = '0' OR order_type = '1') AND
+		</if>
+		<if test="type == 2">
+			(order_type = '2' OR order_type = '3') AND
+		</if>
+		del_flag = '0'
+	</select>
+	<select id="queryTradeInfoByTradeNo" resultMap="BaseResultMap" parameterType="java.lang.String">
+		SELECT <include refid="Base_Column_List" />
+		FROM np_trade_info
+		WHERE order_code = #{tradeNo, jdbcType=VARCHAR} AND
+		del_flag = '0'
+	</select>
+
+	<update id="updateTradeInfo" parameterType="com.ningpai.m.deposit.bean.TradeInfo">
+		UPDATE np_trade_info
+		SET order_status = #{orderStatus,jdbcType=CHAR},current_price = #{currentPrice,jdbcType=DECIMAL}
+		WHERE order_status = '5' AND del_flag = '0' and order_code = #{orderCode,jdbcType=VARCHAR}
+	</update>
+	<!--根据提现交易记录展示条件（全部／收入/支出）和分页条件查询列表-->
+	<select id="queryWithdrawPage" resultMap="BaseResultMap" parameterType="java.util.Map">
+		SELECT <include refid="Page_Column_List" />
+		FROM np_trade_info
+		WHERE customer_id = #{customerId, jdbcType=BIGINT} AND order_type = '2' AND
+		<if test="type == 1">
+			order_status = '0' AND
+		</if>
+		<if test="type == 2">
+			(order_status = '2' OR order_status = '3') AND
+		</if>
+		<if test="type == 3">
+			order_status = '1' AND
+		</if>
+		<if test="type == 4">
+			order_status = '4' AND
+		</if>
+		del_flag = '0'
+		ORDER BY create_time DESC
+		limit #{startRowNum}, #{endRowNum}
+	</select>
+
+	<!--根据提现交易记录展示条件（全部／收入/支出）和分页条件查询列表总数-->
+	<select id="queryWithdrawPageRows" resultType="java.lang.Long" parameterType="java.util.Map">
+		SELECT COUNT(1)
+		FROM np_trade_info
+		WHERE customer_id = #{customerId, jdbcType=BIGINT} AND order_type = '2' AND
+		<if test="type == 1">
+			order_status = '0' AND
+		</if>
+		<if test="type == 2">
+			(order_status = '2' OR order_status = '3') AND
+		</if>
+		<if test="type == 3">
+			order_status = '1' AND
+		</if>
+		<if test="type == 4">
+			order_status = '4' AND
+		</if>
+		del_flag = '0'
+	</select>
+	<!--根据交易记录id查询交易记录信息-->
+	<select id="queryTradeInfoById" resultMap="BaseResultMapVo" parameterType="java.lang.Long">
+		SELECT <include refid="Base_Column_List" />
+		FROM np_trade_info
+		WHERE id = #{id, jdbcType=VARCHAR} AND
+		del_flag = '0'
+	</select>
+<!--修改交易状态-->
+	<update id="updateTradeInfoStatus" parameterType="java.util.Map">
+		UPDATE np_trade_info
+		<set>
+			<if test="orderStatus != null">
+				order_status = #{orderStatus, jdbcType=VARCHAR},
+			</if>
+			<if test="currentPrice != null">
+				current_price = #{currentPrice, jdbcType=DECIMAL},
+			</if>
+		</set>
+		WHERE del_flag = '0' and
+		<if test="type == 0">
+			order_status = '0' AND
+		</if>
+		<if test="type == 3">
+			order_status = '3' AND
+		</if>
+		id = #{tradeInfoId,jdbcType=BIGINT} AND customer_id = #{customerId, jdbcType=BIGINT}
+	</update>
+	<!--查询提现交易明细-->
+	<select id="queryByIdAndCusId" resultMap="BaseResultMapVo" parameterType="com.ningpai.m.deposit.bean.TradeInfo">
+		SELECT <include refid="Base_Column_List" />
+		FROM np_trade_info
+		WHERE id = #{id, jdbcType=VARCHAR} AND customer_id = #{customerId,jdbcType=BIGINT} AND
+		del_flag = '0'
+	</select>
+</mapper>

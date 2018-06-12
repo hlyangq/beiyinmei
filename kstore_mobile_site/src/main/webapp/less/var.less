@@ -1,0 +1,26 @@
+@baseUrl: "../images/";
+@commonbgUrl: "../images/commonbg.png";
+
+.bgSiz(@width,@height){
+  -webkit-background-size: @width @height;
+  background-size: @width @height;
+}
+
+@bdCommon:1px solid #ececec;
+@themColor:#E63D59;//主题颜色
+@themColor_rgba_20:rgba(255,54,81,.2);
+@priceColor:#c00;//价格颜色
+@labelBgColor:#FF3952;//标签背景颜色
+@labelFontColor:#fff;//标签字体颜色
+@btnColor:@themColor;//有色按钮颜色
+
+@headerbgColor:#FF5067;
+@headerbgImg:'@{baseUrl}headerbg.png';
+@headersearchbgColor:rgba(248,37,66,.42);
+
+/* 底部样式相关变量 */
+@bottomBarHeight:52px;//高度
+@bottomBarBgColor:#fff;//背景色
+@bottomBarFontColor:#999;//字体颜色
+@bottomBarFontSelectedColor:@themColor;//选中的字体颜色
+@bottomBarColumns:4;

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.m.deposit.mapper.ChargeWithdrawMapper" >
+	<resultMap id="BaseResultMap" type="com.ningpai.m.deposit.bean.ChargeWithdraw" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="trade_info_id" property="tradeInfoId" jdbcType="BIGINT" />
+		<result column="customer_id" property="customerId" jdbcType="BIGINT" />
+		<result column="receiving_bank" property="receivingBank" jdbcType="BIGINT" />
+		<result column="bank_name" property="bankName" jdbcType="VARCHAR" />
+		<result column="bank_no" property="bankNo" jdbcType="VARCHAR" />
+		<result column="account_name" property="accountName" jdbcType="VARCHAR" />
+		<result column="contact_mobile" property="contactMobile" jdbcType="VARCHAR" />
+		<result column="amount" property="amount" jdbcType="DECIMAL" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<association property="bankInfo" column="receiving_bank" select="com.ningpai.m.deposit.mapper.BankInfoMapper.selectByPrimaryKey"></association>
+	</resultMap>
+
+	<sql id="Base_Column_List" >
+		id,trade_info_id,customer_id,receiving_bank,bank_name,
+		bank_no,account_name,contact_mobile,amount,create_time,
+		remark
+	</sql>
+
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+		select
+		<include refid="Base_Column_List" />
+		from np_charge_withdraw
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+
+	<insert id="insertSelective" parameterType="com.ningpai.m.deposit.bean.ChargeWithdraw" useGeneratedKeys="true" keyProperty="id" >
+		insert into np_charge_withdraw
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				id,
+			</if>
+			<if test="tradeInfoId != null" >
+				trade_info_id,
+			</if>
+			<if test="customerId != null" >
+				customer_id,
+			</if>
+			<if test="receivingBank != null" >
+				receiving_bank,
+			</if>
+			<if test="bankName != null" >
+				bank_name,
+			</if>
+			<if test="bankNo != null" >
+				bank_no,
+			</if>
+			<if test="accountName != null" >
+				account_name,
+			</if>
+			<if test="contactMobile != null" >
+				contact_mobile,
+			</if>
+			<if test="amount != null" >
+				amount,
+			</if>
+			<if test="createTime != null" >
+				create_time,
+			</if>
+			<if test="remark != null" >
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="id != null" >
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="tradeInfoId != null" >
+				#{tradeInfoId,jdbcType=BIGINT},
+			</if>
+			<if test="customerId != null" >
+				#{customerId,jdbcType=BIGINT},
+			</if>
+			<if test="receivingBank != null" >
+				#{receivingBank,jdbcType=BIGINT},
+			</if>
+			<if test="bankName != null" >
+				#{bankName,jdbcType=VARCHAR},
+			</if>
+			<if test="bankNo != null" >
+				#{bankNo,jdbcType=VARCHAR},
+			</if>
+			<if test="accountName != null" >
+				#{accountName,jdbcType=VARCHAR},
+			</if>
+			<if test="contactMobile != null" >
+				#{contactMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="amount != null" >
+				#{amount,jdbcType=DECIMAL},
+			</if>
+			<if test="createTime != null" >
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null" >
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateByPrimaryKeySelective" parameterType="com.ningpai.m.deposit.bean.ChargeWithdraw" >
+		update np_charge_withdraw
+		<set >
+			<if test="tradeInfoId != null" >
+				trade_info_id = #{tradeInfoId,jdbcType=BIGINT},
+			</if>
+			<if test="customerId != null" >
+				customer_id = #{customerId,jdbcType=BIGINT},
+			</if>
+			<if test="receivingBank != null" >
+				receiving_bank = #{receivingBank,jdbcType=BIGINT},
+			</if>
+			<if test="bankName != null" >
+				bank_name = #{bankName,jdbcType=VARCHAR},
+			</if>
+			<if test="bankNo != null" >
+				bank_no = #{bankNo,jdbcType=VARCHAR},
+			</if>
+			<if test="accountName != null" >
+				account_name = #{accountName,jdbcType=VARCHAR},
+			</if>
+			<if test="contactMobile != null" >
+				contact_mobile = #{contactMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="amount != null" >
+				amount = #{amount,jdbcType=DECIMAL},
+			</if>
+			<if test="createTime != null" >
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="remark != null" >
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<select id="selectList" parameterType="java.util.Map" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from np_charge_withdraw
+		where del_flag = '0'
+		<if test="pageBean.objectBean.bankName != null and pageBean.objectBean.bankName != ''">
+			and bank_name like CONCAT('%',#{pageBean.objectBean.bankName,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.bankNo != null and pageBean.objectBean.bankNo != ''">
+			and bank_no like CONCAT('%',#{pageBean.objectBean.bankNo,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.accountName != null and pageBean.objectBean.accountName != ''">
+			and account_name like CONCAT('%',#{pageBean.objectBean.accountName,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.contactMobile != null and pageBean.objectBean.contactMobile != ''">
+			and contact_mobile like CONCAT('%',#{pageBean.objectBean.contactMobile,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.remark != null and pageBean.objectBean.remark != ''">
+			and remark like CONCAT('%',#{pageBean.objectBean.remark,jdbcType=VARCHAR},'%')
+		</if>
+		limit #{pageBean.startRowNum},#{pageBean.endRowNum}
+	</select>
+
+	<select id="selectListCount" parameterType="java.util.Map" resultType="java.lang.Integer">
+		select
+		count(1)
+		from np_charge_withdraw
+		where del_flag = '0'
+		<if test="pageBean.objectBean.bankName != null and pageBean.objectBean.bankName != ''">
+			and bank_name like CONCAT('%',#{pageBean.objectBean.bankName,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.bankNo != null and pageBean.objectBean.bankNo != ''">
+			and bank_no like CONCAT('%',#{pageBean.objectBean.bankNo,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.accountName != null and pageBean.objectBean.accountName != ''">
+			and account_name like CONCAT('%',#{pageBean.objectBean.accountName,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.contactMobile != null and pageBean.objectBean.contactMobile != ''">
+			and contact_mobile like CONCAT('%',#{pageBean.objectBean.contactMobile,jdbcType=VARCHAR},'%')
+		</if>
+		<if test="pageBean.objectBean.remark != null and pageBean.objectBean.remark != ''">
+			and remark like CONCAT('%',#{pageBean.objectBean.remark,jdbcType=VARCHAR},'%')
+		</if>
+	</select>
+	<select id="selectByTradeInfoId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+		select
+		<include refid="Base_Column_List" />
+		from np_charge_withdraw
+		where trade_info_id = #{id,jdbcType=BIGINT}
+	</select>
+</mapper>

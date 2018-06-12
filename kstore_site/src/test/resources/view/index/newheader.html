@@ -1,0 +1,92 @@
+<style>
+.divhide{
+	 display: none;
+}
+</style>
+	<div class="container">
+    	<div class="header clearfix">
+    		<div class="logo fl">
+    			<a href="a"><img src="a" alt="" style="width:165px;height:40px;" /></a>
+    			<a class="ml30" href="/#">
+    				<img src="/index_two/images/hd_img.gif" alt="" 
+    				width="150px" height="80px"/></a>
+    		</div><!--/logo-->
+			<div class="search_wp fl mt15 pr">
+            	<div class="search_box clearfix">
+            		<form id="topSearchForm" action = "/goods/searchproduct2.html" method = "get">
+                            <input class="search_text fl c999" type="text" name="title" autocomplete="off" value=""/>
+                	<input class="search_btn fl" type="button" onclick="checkSearch()" value="" />
+            		</form>
+                </div><!--/search_box-->
+                <div class="hot_word mt10">
+                	热门搜索：
+                </div><!--/hot_word-->
+                <div class="ex_search pa">
+                    <ul id="searchList">
+                    </ul>
+                    <p class="tr"><a class="close_ex" href="javascript:;">关闭</a></p>
+                </div><!--/ex_search-->
+            </div><!--/search_wp-->
+            <div class="shopping_cart fr mt20">
+            	<dl class="pr" id="loadcart">
+            		<dt class="pr" id="mminicart">
+            			<span class="sc_num"><em>0</em></span>
+                    	<a href="/myshoppingcart.html">我的购物车</a>
+            		</dt>
+            		<dd>
+            			<div class="cart_empty">
+            				<!--            				<p>您的购物车是空的<br />如您已添加过商品，可<a href="/login.html">登录</a>后查看</p>
+            				-->
+            				<p>您的购物车是空的<br />如您已添加过商品，可<a href="/login.html">登录</a>后查看</p>
+            			</div><!--/cart_empty-->
+            			<div class="cart_cont none">
+            				<div class="cart_tit clearfix mt5">
+            				</div><!--/cart_tit-->
+            				<ul class="cart_list mt10">
+            				</ul><!--/cart_list-->
+            				<div class="settle_accounts tr mt10">
+            					<span class="mr10">共1件商品</span>
+            					共计
+            					<em><b>¥</b>2878.00</em>
+            				</div><!--/settle_accounts-->
+            				<div class="tr mt10 mb10"><a class="settle_btn" href="/myshoppingcart.html">去购物车结算</a></div>
+            			</div><!--/cart_cont-->
+            		</dd>
+            	</dl>
+            </div><!--/shopping_cart-->
+    	</div><!--/header-->
+</div>
+<div style="width:100%;height:38px;" id="navbg" class="">
+<div class="container">
+    	<div class="nav clearfix">
+    		<input type="hidden" id="tempcbshowflag" value="">
+    		<div class="pro_sort fl pr">
+    			<h2><a href="javascript:;">全部商品分类</a><b></b></h2>
+    			<div class="sort_cont pa none">
+    			</div><!--/sort_cont-->
+    			<div class="sort_open pa">
+                    <a class="close_category pa" href="javascript:;"></a>
+    			</div><!--/sort_open-->
+    		</div><!--/pro_sort-->
+    		
+    		<ul class="sort_list clearfix">
+    		</ul><!--/sort_list-->
+    	</div><!--/nav-->
+    </div>
+    </div><!--/container-->
+
+	<script type="text/javascript">
+	   function clickNav(url,sort){ 
+			$.ajax({ url:"/navsort.htm?navsort="+sort, async:false ,success: function(date){
+				}
+			}); 
+			//window.location.href="/"+url;
+           if(url.indexOf("ttp://")!=-1){
+               window.open(url);
+           }else{
+               window.open("/"+url);
+           }
+		}
+		</script>
+
+	

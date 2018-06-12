@@ -1,0 +1,158 @@
+	<input type="hidden" id="isIndex" value="1"/>
+    <div class="container">
+        <div class="fst_screen clearfix">
+            <div class="slides_wp fl">
+                <div id="slides" class="slides">
+                </div><!--/slides-->
+                <div class="jscroll pr">
+                    <div class="jscroll_wp">
+                        <div class="jscroll_box">
+                            <ul class="jscroll_list clearfix">
+                            </ul><!--/jscroll_list-->
+                        </div><!--/jscroll_box-->
+                    </div><!--/jscroll_wp-->
+                    <a class="j_prev" href="javascript:;"></a>
+                    <a class="j_next" href="javascript:;"></a>
+                </div><!--/jscroll-->
+            </div><!--/slides_wp-->
+            <div class="fst_rig fl">
+                <div class="r_pic">
+                	</div>
+                <div class="r_notice">
+                    <div class="notice_tit clearfix">
+                        <h3 class="fl">公告</h3>
+                        <a class="n_more fr" href="information/list/">更多»</a>
+                    </div><!--/notice_tit-->
+                    <div class="notice_cont">
+                        <ul class="notice_list">
+                        </ul><!--/notice_list-->
+                    </div><!--/notice_cont-->
+                </div><!--/r_notice-->
+                <div class="r_recharge">
+                   <div style="height:178px;border:1px solid #ddd;">
+
+                   </div>
+                   
+                </div><!--/r_recharge-->
+            </div><!--/fst_rig-->
+        </div><!--/fst_screen-->
+
+        <div class="hot_recommend mt15">
+            <h2>热门推荐</h2>
+            <ul class="recommend_list clearfix mt10">
+                
+            </ul><!--/recommend_list-->
+            <div class="rec_show mt10 clearfix">
+            </div><!--/rec_show-->
+        </div><!--/hot_recommend-->
+        
+
+	<div class="side_tools">
+        <ul class="clearfix">
+        </ul>
+        <a class="feedback" href="/customer/feedback.html"><em>我要反馈</em><b></b></a>
+        <a class="backtotop" href="javascript:;"><em>返回顶部</em><b></b></a>
+        <div class="customer-box">
+            <span class="title">a</span>
+            <hr>
+            <a href="javascript:;" class="close-cs"></a>
+        </div>
+    </div><!--/side_tools-->
+
+    <script>
+        $(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_two/images/lazy_img.png",
+				skip_invisible: false
+			});
+        	//轮播大广告
+        	if($("#slides").find("a").length > 1) {
+	            $('#slides').slidesjs({
+	                width: 770,
+	                height: 330,
+	                play: {
+	                    active: false,
+	                    effect: "fade",
+	                    auto: true,
+	                    interval: 4000,
+	                    pauseOnHover: true,
+	                    restartDelay: 2500
+	                },
+	                navigation: {
+	                    active: false
+	                },
+	                pagination: {
+	                    active: true,
+	                    effect: "fade"
+	                }
+	            });
+        	}
+            //轮播小广告的数量
+            var jscroll_list_size = $(".jscroll_list").find("li").length;
+            if(jscroll_list_size>4){
+            	jscroll_list_size=4;	
+            }
+            if($(".jscroll_list").find("li").length>1){
+	            $(".jscroll_box").jCarouselLite({
+	            	
+	                btnNext: ".j_next",
+	                btnPrev: ".j_prev",
+	                auto: 3600,
+	                speed: 500,
+	                visible: jscroll_list_size,
+	                onMouse: true,
+	                scroll: jscroll_list_size
+	            });
+            }
+
+            $(".floor_wp").each(function(){
+                var cur = $(this);
+                if(cur.find(".f_slides a").length > 1) {
+                	cur.find(".f_slides").slidesjs({
+	                    width: 600,
+	                    height: 300,
+	                    navigation: {
+	                        active: false
+	                    },
+	                    pagination: {
+	                        active: true,
+	                        effect: "slide"
+	                    }
+	                });
+	                
+                }; 
+                if(cur.find(".up_slides a").length > 1) {
+                	cur.find(".up_slides").slidesjs({
+	                    width: 400,
+	                    height: 250,
+	                    navigation: {
+	                        active: false
+	                    },
+	                    pagination: {
+	                        active: true,
+	                        effect: "slide"
+	                    }
+	                });
+                
+                }        
+                if(cur.find(".below_slides a").length > 1) {
+                	cur.find(".below_slides").slidesjs({
+	                    width: 400,
+	                    height: 250,
+	                    navigation: {
+	                        active: false
+	                    },
+	                    pagination: {
+	                        active: true,
+	                        effect: "slide"
+	                    }
+	                });
+                
+                }        
+            });
+        });
+    </script>

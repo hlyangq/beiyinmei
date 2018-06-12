@@ -1,0 +1,62 @@
+<input type="hidden" id="isIndex" value="1"/>
+<div id="content">
+            <div class="section-01">
+                <div id="slides">
+                </div>
+                <div class="hd-show">
+                    <ul>
+                    </ul>
+                    <a href="javascript:;" class="s-prev"></a>
+                    <a href="javascript:;" class="s-next"></a>
+                </div>
+            </div><!--section-01-->
+
+            <div class="section-02">
+                <h3>热销商品<span>Best selling</span></h3>
+                <div class="switch-box">
+                    <a href="javascript:;" class="t-prev"><i class="iconfont">&#xe609;</i></a>
+                    <a href="javascript:;" class="t-next"><i class="iconfont">&#xe608;</i></a>
+                </div>
+                <div class="best-selling">
+                    <div class="selling-wp">
+                        <ul>
+                        </ul>
+                    </div><!--selling-wp-->
+                </div><!--best-selling-->
+            </div><!--section-02-->
+            
+            <div class="brands-bar">
+                <div class="brands-box">
+                    <ul>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="bd-prev"></a>
+                <a href="javascript:;" class="bd-next"></a>
+            </div><!--brands-bar-->
+        </div><!--content-->
+        
+        
+        <div class="sideBar">
+	        <a href="/customer/feedback.html" id="complaint"><i class="iconfont">&#xe604;</i>投诉建议</a>
+	        <a href="javascript:;" id="backtoTop"><i class="iconfont">&#xe605;</i>回到顶部</a>
+	        
+	        <div class="customer-box">
+            <span class="title">a</span>
+            <hr>
+            <a href="javascript:;" class="close-cs"></a>
+    </div>
+        </div>
+ <script>
+$(function() {
+        	//图片延迟加载
+			$("img.lazy").lazyload({
+				threshold: 200,
+				effect: "fadeIn",
+				failurelimit : 10,
+				placeholder: "/index_nine/images/lazy_img.png",
+				skip_invisible: false
+			});
+});
+</script>
+        
+        

@@ -1,0 +1,151 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+    font-family: "Helvetica Neue",
+    "Helvetica",
+    "tahoma",
+    "arial",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "WenQuanYi Micro Hei",
+    sans-serif;
+}
+.app_wrap {
+    height: 100%;
+    font-size: 12px;
+    background: url(./bg.jpg) no-repeat center top;
+    background-size: auto 100%;
+}
+.app_container {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.app_header {
+    text-align: center;
+    color: #fff;
+}
+.app_title {
+    font-weight: 500;
+    font-size: 70px;
+}
+.app_sec_title {
+    font-weight: 500;
+    font-size: 30px;
+}
+.app_description {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.app_download {
+    margin-top: 80px;
+    text-align: center;
+}
+.download_item {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.item_02 {
+    padding: 0 70px 10px 70px;
+    margin: 0 70px 0 70px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+.item_title {
+    font-size: 20px;
+    font-weight: 500;
+    height: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.item_title .icon {
+    display: inline-block;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 80%;
+    margin-right: 10px;
+    margin-top: -8px;
+    vertical-align: middle;
+}
+.icon_phone {
+    background-image: url(./phone.png);
+    width: 20px;
+}
+.icon_download {
+    background-image: url(./download.png);
+    width: 30px;
+}
+.icon_wechat {
+    background-image: url(./wechat.png);
+    width: 40px;
+}
+.download_btn {
+    display: block;
+    width: 180px;
+    padding-left: 60px;
+    height: 55px;
+    margin-bottom: 35px;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 5px;
+}
+.download_btn strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+}
+.download_btn span {
+    font-size: 14px;
+    color: #555;
+}
+.download_android {
+    background: url(./android_download.png) no-repeat center center;
+}
+.download_apple {
+    background: url(./apple_download.png) no-repeat center center;
+}
+.download_android strong {
+    color: #86ad01;
+}
+.download_apple strong {
+    color: #555;
+}
+.wechat_box {
+    overflow: hidden;
+}
+.wechat_box img {
+    float: left;
+}
+.other_link {
+    float: left;
+    margin-left: 20px;
+    text-align: left;
+}
+.other_link a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.other_link a i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(./arrow.png) no-repeat center center;
+    background-size: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -6px;
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ningpai.customer.dao.DepositInfoMapper">
+    <!-- 预存款信息映射 会员资金初始化字段-->
+    <resultMap type="com.ningpai.customer.bean.DepositInfo" id="DepositInfoMap">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="customer_id" property="customerId" jdbcType="BIGINT"/>
+        <result column="pre_deposit" property="preDeposit" jdbcType="DECIMAL"/>
+        <result column="freeze_pre_deposit" property="freezePreDeposit" jdbcType="DECIMAL"/>
+        <result column="pay_password" property="payPassword" jdbcType="VARCHAR"/>
+        <result column="password_error_count" property="passwordErrorCount" jdbcType="INTEGER"/>
+        <result column="password_time" property="passwordTime" jdbcType="TIMESTAMP"/>
+        <!--<result column="del_flag" property="delFlag" jdbcType="CHAR"/>-->
+        <result column="customer_username" jdbcType="VARCHAR" property="customerUsername"/>
+        <result column="customer_img" jdbcType="VARCHAR" property="customerImg"/>
+        <result column="total_deposit" property="totalDeposit" jdbcType="DECIMAL"/>
+        <result column="is_flag" jdbcType="CHAR" property="isFlag"/>
+    </resultMap>
+
+    <!-- 查询会员资金信息总数用于分页 -->
+    <select id="selectTotalDespositInfo" resultType="java.lang.Long" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+          count(d.customer_id)
+        from np_deposit_info d
+        left join np_customer c on d.customer_id = c.customer_id
+        left join np_customer_info i on c.customer_id = i.customer_id
+        <!--where d.del_flag = '0'-->
+        where 1=1
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="infoRealName != null and infoRealName != ''">
+            and i.info_realname like CONCAT(CONCAT('%', #{infoRealName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerMobile != null and customerMobile != ''">
+            and i.info_mobile like CONCAT(CONCAT('%', #{customerMobile,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerEmail != null and customerEmail != ''">
+            and i.info_email like CONCAT(CONCAT('%', #{customerEmail,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerStatus != null and customerStatus != ''">
+            and c.is_flag = #{customerStatus,jdbcType=VARCHAR}
+        </if>
+    </select>
+    <!-- 高级搜索 会员资金初始化及查询语句 -->
+    <select id="selectDespositInfoList" resultMap="DepositInfoMap" parameterType="com.ningpai.customer.vo.DepositInfoVo">
+        select
+            d.id,
+            d.customer_id,
+            d.pre_deposit,
+            d.freeze_pre_deposit,
+            (d.pre_deposit+d.freeze_pre_deposit) as total_deposit,
+            c.customer_img,
+            c.customer_username,
+            c.is_flag
+        from np_deposit_info d
+        left join np_customer c on d.customer_id = c.customer_id
+        left join np_customer_info i on c.customer_id = i.customer_id
+        <!--where d.del_flag = '0'-->
+        where 1=1
+        <if test="customerId != null and customerId != ''">
+            and d.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+        <if test="customerName != null and customerName != ''">
+            and c.customer_username like CONCAT(CONCAT('%', #{customerName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="infoRealName != null and infoRealName != ''">
+            and i.info_realname like CONCAT(CONCAT('%', #{infoRealName,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerMobile != null and customerMobile != ''">
+            and i.info_mobile like CONCAT(CONCAT('%', #{customerMobile,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerEmail != null and customerEmail != ''">
+            and i.info_email like CONCAT(CONCAT('%', #{customerEmail,jdbcType=VARCHAR}),'%')
+        </if>
+        <if test="customerStatus != null and customerStatus != ''">
+            and c.is_flag = #{customerStatus,jdbcType=VARCHAR}
+        </if>
+        order by create_time desc
+        limit #{startRowNum},#{endRowNum}
+    </select>
+    <!-- 初始化，查询平台会员预存款总额 -->
+    <select id="selectTotalDesposit" resultType="java.util.Map" parameterType="java.lang.Long">
+        select
+            sum(d.pre_deposit) as 'usableDeposit',
+            sum(d.freeze_pre_deposit) as 'totalFreezeDeposit',
+            sum(d.pre_deposit+d.freeze_pre_deposit) as 'totalDeposit'
+        from np_deposit_info d
+        where 1=1
+        <if test="customerId != null and customerId != ''">
+            and d.customer_id = #{customerId,jdbcType=BIGINT}
+        </if>
+    </select>
+    <!--根据客户ID查询会员预存款信息，用于修改-->
+    <select id="selectDepositByCustId" resultMap="DepositInfoMap" parameterType="java.lang.Long">
+        select
+            d.id,
+            d.customer_id,
+            d.pre_deposit,
+            d.freeze_pre_deposit,
+            d.pay_password,
+            d.password_error_count,
+            d.password_time
+        from np_deposit_info d
+        where d.customer_id = #{customerId,jdbcType=BIGINT}
+    </select>
+    <!--修改预存款信息-->
+    <update id="updateDeposit" parameterType="com.ningpai.customer.bean.DepositInfo">
+        update np_deposit_info d
+        <set>
+            d.pre_deposit = #{preDeposit,jdbcType=DECIMAL},
+            d.freeze_pre_deposit = #{freezePreDeposit,jdbcType=DECIMAL},
+            <if test="payPassword != null and payPassword != ''">
+              d.pay_password = #{payPassword,jdbcType=VARCHAR},
+            </if>
+            <if test="passwordErrorCount != null and passwordErrorCount != ''">
+             d.password_error_count = #{passwordErrorCount,jdbcType=INTEGER},
+            </if>
+            <if test="passwordTime != null and passwordTime != ''">
+             d.password_time = #{passwordTime,jdbcType=TIMESTAMP}
+            </if>
+        </set>
+        where d.customer_id = #{customerId,jdbcType=BIGINT} and d.id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ningpai.site.customer.dao.OrderNoticeMapper" >
+  <resultMap id="BaseResultMap" type="com.ningpai.site.customer.bean.OrderNotice" >
+    <id column="notice_id" property="noticeId" jdbcType="BIGINT" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="notice_title" property="noticeTitle" jdbcType="VARCHAR" />
+    <result column="notice_content" property="noticeContent" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="del_time" property="delTime" jdbcType="TIMESTAMP" />
+    <result column="del_flag" property="delFlag" jdbcType="CHAR" />
+    <result column="is_read" property="isRead" jdbcType="CHAR" />
+    <result column="order_id" property="orderId" jdbcType="BIGINT" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    notice_id, customer_id, notice_title, notice_content,
+    create_time, del_time, del_flag, is_read, order_id
+  </sql>
+  
+ <!--   根据customerId查询全部订单通知 -->
+  <select id="selectList"  resultMap="BaseResultMap"  parameterType="java.util.Map"  >
+      select
+      <include refid="Base_Column_List"/>
+      from np_order_notice 
+      where customer_id = #{customerId,jdbcType=BIGINT}
+      and del_flag = '0'
+      order by notice_id DESC
+      limit #{startRowNum},#{endRowNum}
+  </select>
+  
+  <!-- 根据customerId查询全部订单通知个数 -->
+  <select id="selectNoticeCount" parameterType="java.util.Map" resultType="java.lang.Long">
+    select
+      COUNT(1)
+    from np_order_notice 
+      where customer_id = #{customerId,jdbcType=BIGINT}
+      and del_flag = '0'
+    order by notice_id DESC
+  </select>
+
+    <!-- 根据customerId查询未读个数 -->
+    <select id="findNoticeCount" parameterType="java.lang.Long" resultType="java.lang.Long">
+        select
+        COUNT(1)
+        from np_order_notice 
+        where customer_id=#{customerId,jdbcType=BIGINT} and del_flag='0' and is_read='0'
+    </select>
+    <!-- 添加一条 -->
+  <insert id="insertSelective" parameterType="com.ningpai.site.customer.bean.OrderNotice" >
+    insert into np_order_notice
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        notice_id,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="noticeTitle != null" >
+        notice_title,
+      </if>
+      <if test="noticeContent != null" >
+        notice_content,
+      </if>
+      <if test="createTime == null" >
+        create_time,
+      </if>
+      <if test="delTime != null" >
+        del_time,
+      </if>
+      <if test="delFlag == null" >
+        del_flag,
+      </if>
+      <if test="isRead != null" >
+        is_read,
+      </if>
+      <if test="orderId != null" >
+        order_id
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="noticeId != null" >
+        #{noticeId,jdbcType=BIGINT},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="noticeTitle != null" >
+        #{noticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeContent != null" >
+        #{noticeContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime == null" >
+        SYSDATE(),
+      </if>
+      <if test="delTime != null" >
+        #{delTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag == null" >
+        '0',
+      </if>
+      <if test="isRead != null" >
+        #{isRead,jdbcType=CHAR},
+      </if>
+      <if test="orderId != null" >
+        #{orderId,jdbcType=BIGINT}
+      </if>
+    </trim>
+  </insert>
+    <!-- 修改 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.ningpai.site.customer.bean.OrderNotice" >
+    update np_order_notice
+    <set >
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="noticeTitle != null" >
+        notice_title = #{noticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeContent != null" >
+        notice_content = #{noticeContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delTime != null" >
+        del_time = #{delTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="isRead != null" >
+        is_read = #{isRead,jdbcType=CHAR},
+      </if>
+       <if test="orderId != null" >
+        order_id = #{orderId,jdbcType=BIGINT}
+      </if>
+    </set>
+    where notice_id = #{noticeId,jdbcType=BIGINT}
+  </update>
+  <!-- 删除 -->
+  <update id="deleteByPrimaryKeySelective" parameterType="com.ningpai.site.customer.bean.OrderNotice">
+        update np_order_notice
+        set del_flag=#{delFlag,jdbcType=CHAR}, del_time = SYSDATE()
+        where notice_id=#{noticeId,jdbcType=BIGINT}
+  </update>
+</mapper>

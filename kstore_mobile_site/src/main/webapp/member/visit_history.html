@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 浏览历史</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="http://pic.ofcard.com/astore/wei-store/js/jquery-1.10.1.js"></script>
+</head>
+<body>
+
+<div class="content" style="padding-top:0;">
+  <div class="prolist list-line">
+    <div class="list-item">
+      <div class="propic">
+        <img src="../images/propic-01.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄</h3>
+        <p class="price">&yen;&nbsp;<span class="num">55.00</span></p>
+      </div>
+    </div>
+    <div class="list-item sell-out">
+      <div class="propic">
+        <img src="../images/propic-02.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄牛皮纸空白内页软面抄复古笔记本</h3>
+        <p class="price">&yen;&nbsp;<span>3523.00</span></p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="propic">
+        <img src="../images/propic-03.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄</h3>
+        <p class="price">&yen;&nbsp;<span>55.00</span></p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="propic">
+        <img src="../images/propic-04.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄</h3>
+        <p class="price">&yen;&nbsp;<span>55.00</span></p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="propic">
+        <img src="../images/propic-01.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄</h3>
+        <p class="price">&yen;&nbsp;<span>55.00</span></p>
+      </div>
+    </div>
+    <div class="list-item">
+      <div class="propic">
+        <img src="../images/propic-02.jpg" alt="产品图"/>
+      </div>
+      <div class="prodesc">
+        <h3 class="title">牛皮纸空白内页软面抄复古笔记本 皮纸空内页软面抄</h3>
+        <p class="price">&yen;&nbsp;<span>55.00</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bar-bottom">
+  <a class="bar-item" href="../home.html"><i class="bar-bottom-i home"></i>首页</a>
+  <a class="bar-item" href="../class.html"><i class="bar-bottom-i class"></i>分类</a>
+  <a class="bar-item" href="../cart.html"><i class="bar-bottom-i cart"></i>购物车</a>
+  <a class="bar-item selected" href="main.html"><i class="bar-bottom-i mine"></i>我的</a>
+</div>
+<script>
+  $(function(){
+
+    /* 排序 */
+    $('.sort_choose').click(function(){
+      if($('.opacity-bg-1').length == 0){
+        $('body').append('<div class="opacity-bg-1"></div>');
+        $('.sort-list').slideDown('fast');
+      }
+    });
+    $('.sort-list li').click(function(){
+      $(this).addClass('selected').siblings().removeClass('selected');
+      $('.opacity-bg-1').remove();
+      $('.sort-list').hide();
+    });
+
+    /* 筛选 */
+    $('.filter_choose').click(function(){
+      if($('.opacity-bg-3').length == 0){
+        $('body').append('<div class="opacity-bg-3"></div>');
+        $('.screen').show();
+      }
+    });
+    $('a.sure').click(function(){
+      $('.opacity-bg-3').remove();
+      $('.screen').hide();
+    });
+
+  });
+</script>
+</body>
+</html>

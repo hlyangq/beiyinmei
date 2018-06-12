@@ -1,0 +1,142 @@
+
+<style>
+    .divhide{
+        display: none;
+    }
+    .hot{color:rgb(223, 23, 56)!important}
+</style>
+
+<input type="hidden" id="basePath" value=""/>
+<div class="section-header">
+        <div class="content">
+            <h1 id="logo"><a href="a"><img alt="" src="a" style="width:165px;height:40px;"/></a>
+                <div class="logoBanner"><a href="/#"><img src="/index_thirteen/images/ad.jpg" style="width:115px;height:36px;"/></a></div>
+            </h1>
+
+            <div class="cartfd">
+                <s class="cartBanner"></s>
+                <a class="cartit" href="/myshoppingcart.html">
+                    <span><s></s>购物车</span>
+                    <strong class="cartNum">(0)</strong>
+                </a>
+                <div class="miniCart hide">
+                    <div class="mCartBox">
+                        <!-- mcBoxTop 居上，滚动时依然居上mcFloat展示 -->
+                        <div class="mcBoxTop clearfix">
+                        </div>
+                        <div class="mcBoxList">
+                        </div><!--mcBoxList-->
+                        <div class="emCartBox hide">
+                            <span>购物车中还没有商品，再去逛逛吧！</span>
+                        </div>
+                    </div><!--mCartBox-->
+                    <div class="mcGenius bmcGenius"></div><!-- 展开加class"bmcGenius" -->
+                    <div class="mCartError"><!-- 显示错误时bottom:41px -->
+                        <p>正在为您加载数量！</p>
+                    </div>
+                    <div class="mCartHandler clearfix">
+                            <span class="mcCashier">
+                                <span class="mcTotal">
+                                    <span class="mcRmb">¥</span>
+                                    <span class="mcTotalFee">0.00</span>
+                                </span>
+                                <span class="mcGo"><a href="/myshoppingcart.html">结算</a></span><!-- no-mcGo置灰状态 -->
+                            </span>
+                        <h3><!-- "mc_e1与mcNumTotal与展开时的emCartBox"/"mc_e2与mcNumChecked与mcCashier"同时显示 -->
+                            <span class="mc_e1">购物车</span>
+                            <span class="mc_e2">共</span>
+                            <strong class="mcNumTotal">0</strong>
+                            <strong class="mcNumChecked">0</strong>
+                            <span class="mc_e2">件</span>
+                        </h3>
+                    </div><!--mCartHandler-->
+                </div><!--miniCart-->
+            </div><!--cartfd-->
+            <div class="search searchdiv">
+                <form class="mallSearch-form" action="/goods/searchproduct2.html" method="get">
+                    <div class="mallSearch-input">
+                                 <input class="inputSearch" name="title" type="text" autocomplete="off" value=""/>
+                        <button class="btnSearch" type="button" onclick="checkSearch()">搜索</button>
+                    </div>
+                </form>
+                <div class="search_link">
+                </div>
+            </div><!--searchdiv-->
+
+            <div class="mainnav">
+                <div class="navLinks">
+                    <ul>
+                    </ul>
+                </div><!--navLinks-->
+
+                <input type="hidden" id="tempcbshowflag" value="">
+            <div class="showlist">
+                    <strong class="btnnav menucat">
+                        <a class="hover" href="javascript:;">全部商品分类</a>
+                    </strong>
+                </div><!--showlist-->
+            </div><!--mainnav-->
+        </div><!--content-->
+    </div><!--section-header-->
+    
+    <script id="sort" type="text/html">
+    <ul class="list dropdown-menu">
+        {{each list as value i}}
+        <li>
+            {{each value.sorts as v index}}
+            <a href="{{v.mhref}}">{{v.msort}}</a>
+            {{/each}}
+            <div class="links">
+                {{each value.links as v index}}
+                <a href="{{v.lhref}}">{{v.lname}}</a>
+                {{/each}}
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<script id="menu" type="text/html">
+    {{each menu as value i}}
+    <div class="menuView hide" id="{{value.mid}}">
+        <ul>
+            {{each value.mlist as value i}}
+            <li>
+                <h3><a href="{{value.mhref}}">{{value.msort}}</a></h3>
+                <p>
+                    {{each value.menus as value i}}
+                    <a href="{{value.shref}}">{{value.sname}}</a>
+                    {{/each}}
+                </p>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="menuImg"><img src="{{value.mimg}}" alt="" /></div>
+    </div>
+    {{/each}}
+</script>
+<script>
+    var data = {
+        list: [
+        ],
+        
+        menu: [
+        ]
+    };
+    var html = template('sort', data);
+    var menu = template('menu', data);
+    $(".menucat").after(html);
+    $(".showlist").append(menu);
+</script>
+<script type="text/javascript">
+       function clickNav(url,sort){ 
+            $.ajax({ url:"/navsort.htm?navsort="+sort, async:false ,success: function(date){
+                }
+            }); 
+            //window.location.href="/"+url;
+           if(url.indexOf("ttp://")!=-1){
+               window.open(url);
+           }else{
+               window.open("/"+url);
+           }
+        }
+</script>

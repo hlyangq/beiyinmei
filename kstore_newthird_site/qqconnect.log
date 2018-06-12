@@ -1,0 +1,318 @@
+0    INFO  [2015-11-13 14:37:41]  No local configuration file unitils-local.properties found.
+75   DEBUG [2015-11-13 14:37:41]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+76   DEBUG [2015-11-13 14:37:41]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+97   DEBUG [2015-11-13 14:37:41]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+100  DEBUG [2015-11-13 14:37:41]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+102  DEBUG [2015-11-13 14:37:41]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+113  DEBUG [2015-11-13 14:37:41]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+115  DEBUG [2015-11-13 14:37:41]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+212  DEBUG [2015-11-13 14:37:41]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+675  WARN  [2015-11-13 14:37:42]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$536580a3. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2015-11-19 14:39:58]  No local configuration file unitils-local.properties found.
+104  DEBUG [2015-11-19 14:39:58]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+105  DEBUG [2015-11-19 14:39:58]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+146  DEBUG [2015-11-19 14:39:58]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+148  DEBUG [2015-11-19 14:39:58]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+150  DEBUG [2015-11-19 14:39:58]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+158  DEBUG [2015-11-19 14:39:58]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+160  DEBUG [2015-11-19 14:39:58]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+216  DEBUG [2015-11-19 14:39:58]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+1060 WARN  [2015-11-19 14:39:59]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$3bf5af0c. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2015-11-19 16:10:11]  No local configuration file unitils-local.properties found.
+145  DEBUG [2015-11-19 16:10:11]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+145  DEBUG [2015-11-19 16:10:11]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+198  DEBUG [2015-11-19 16:10:11]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+202  DEBUG [2015-11-19 16:10:11]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+204  DEBUG [2015-11-19 16:10:11]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+217  DEBUG [2015-11-19 16:10:11]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+221  DEBUG [2015-11-19 16:10:11]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+379  DEBUG [2015-11-19 16:10:12]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+2175 WARN  [2015-11-19 16:10:13]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$3bf5af0c. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-14 14:22:13]  No local configuration file unitils-local.properties found.
+480  DEBUG [2016-03-14 14:22:13]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+481  DEBUG [2016-03-14 14:22:13]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+490  DEBUG [2016-03-14 14:22:13]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+492  DEBUG [2016-03-14 14:22:13]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+495  DEBUG [2016-03-14 14:22:13]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+502  DEBUG [2016-03-14 14:22:13]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+505  DEBUG [2016-03-14 14:22:13]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+545  DEBUG [2016-03-14 14:22:13]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+974  WARN  [2016-03-14 14:22:14]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-15 09:50:21]  No local configuration file unitils-local.properties found.
+92   DEBUG [2016-03-15 09:50:21]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+97   DEBUG [2016-03-15 09:50:21]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+113  DEBUG [2016-03-15 09:50:21]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+115  DEBUG [2016-03-15 09:50:21]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+119  DEBUG [2016-03-15 09:50:21]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+130  DEBUG [2016-03-15 09:50:21]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+136  DEBUG [2016-03-15 09:50:21]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+198  DEBUG [2016-03-15 09:50:21]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+792  WARN  [2016-03-15 09:50:22]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-15 09:56:25]  No local configuration file unitils-local.properties found.
+36   DEBUG [2016-03-15 09:56:25]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+39   DEBUG [2016-03-15 09:56:25]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+48   DEBUG [2016-03-15 09:56:25]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+50   DEBUG [2016-03-15 09:56:25]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+51   DEBUG [2016-03-15 09:56:25]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+58   DEBUG [2016-03-15 09:56:25]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+60   DEBUG [2016-03-15 09:56:25]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+116  DEBUG [2016-03-15 09:56:25]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+1021 WARN  [2016-03-15 09:56:26]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$3e78f1df. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-16 09:21:11]  No local configuration file unitils-local.properties found.
+55   DEBUG [2016-03-16 09:21:11]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+57   DEBUG [2016-03-16 09:21:11]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+66   DEBUG [2016-03-16 09:21:11]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+68   DEBUG [2016-03-16 09:21:11]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+70   DEBUG [2016-03-16 09:21:11]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+78   DEBUG [2016-03-16 09:21:11]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+81   DEBUG [2016-03-16 09:21:11]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+124  DEBUG [2016-03-16 09:21:11]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+536  WARN  [2016-03-16 09:21:11]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-16 11:18:52]  No local configuration file unitils-local.properties found.
+43   DEBUG [2016-03-16 11:18:52]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+43   DEBUG [2016-03-16 11:18:52]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+56   DEBUG [2016-03-16 11:18:52]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+58   DEBUG [2016-03-16 11:18:52]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+60   DEBUG [2016-03-16 11:18:52]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+68   DEBUG [2016-03-16 11:18:52]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+72   DEBUG [2016-03-16 11:18:52]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+121  DEBUG [2016-03-16 11:18:52]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+598  WARN  [2016-03-16 11:18:52]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$536580a3. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-16 13:57:56]  No local configuration file unitils-local.properties found.
+45   DEBUG [2016-03-16 13:57:56]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+45   DEBUG [2016-03-16 13:57:56]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+56   DEBUG [2016-03-16 13:57:56]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+58   DEBUG [2016-03-16 13:57:56]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+61   DEBUG [2016-03-16 13:57:56]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+70   DEBUG [2016-03-16 13:57:56]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+72   DEBUG [2016-03-16 13:57:56]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+112  DEBUG [2016-03-16 13:57:56]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+567  WARN  [2016-03-16 13:57:56]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-16 17:08:45]  No local configuration file unitils-local.properties found.
+67   DEBUG [2016-03-16 17:08:45]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+70   DEBUG [2016-03-16 17:08:45]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+82   DEBUG [2016-03-16 17:08:45]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+85   DEBUG [2016-03-16 17:08:45]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+87   DEBUG [2016-03-16 17:08:45]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+94   DEBUG [2016-03-16 17:08:45]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+96   DEBUG [2016-03-16 17:08:45]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+141  DEBUG [2016-03-16 17:08:45]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+607  WARN  [2016-03-16 17:08:45]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$536580a3. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-16 17:36:28]  No local configuration file unitils-local.properties found.
+31   DEBUG [2016-03-16 17:36:28]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+32   DEBUG [2016-03-16 17:36:28]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+40   DEBUG [2016-03-16 17:36:28]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+43   DEBUG [2016-03-16 17:36:28]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+46   DEBUG [2016-03-16 17:36:28]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+51   DEBUG [2016-03-16 17:36:28]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+55   DEBUG [2016-03-16 17:36:28]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+100  DEBUG [2016-03-16 17:36:28]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+507  WARN  [2016-03-16 17:36:29]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5923ddeb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-17 16:20:48]  No local configuration file unitils-local.properties found.
+72   DEBUG [2016-03-17 16:20:48]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+73   DEBUG [2016-03-17 16:20:48]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+83   DEBUG [2016-03-17 16:20:48]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+86   DEBUG [2016-03-17 16:20:48]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+88   DEBUG [2016-03-17 16:20:48]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+96   DEBUG [2016-03-17 16:20:48]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+99   DEBUG [2016-03-17 16:20:48]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+141  DEBUG [2016-03-17 16:20:48]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+542  WARN  [2016-03-17 16:20:48]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+1    INFO  [2016-03-17 17:39:27]  No local configuration file unitils-local.properties found.
+51   DEBUG [2016-03-17 17:39:27]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+53   DEBUG [2016-03-17 17:39:27]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+63   DEBUG [2016-03-17 17:39:27]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+65   DEBUG [2016-03-17 17:39:27]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+68   DEBUG [2016-03-17 17:39:27]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+76   DEBUG [2016-03-17 17:39:27]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+78   DEBUG [2016-03-17 17:39:27]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+116  DEBUG [2016-03-17 17:39:27]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+469  WARN  [2016-03-17 17:39:27]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-18 14:28:20]  No local configuration file unitils-local.properties found.
+42   DEBUG [2016-03-18 14:28:20]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+43   DEBUG [2016-03-18 14:28:20]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+52   DEBUG [2016-03-18 14:28:20]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+54   DEBUG [2016-03-18 14:28:20]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+56   DEBUG [2016-03-18 14:28:20]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+63   DEBUG [2016-03-18 14:28:20]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+65   DEBUG [2016-03-18 14:28:20]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+111  DEBUG [2016-03-18 14:28:20]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+1012 WARN  [2016-03-18 14:28:21]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$536580a3. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-18 15:24:37]  No local configuration file unitils-local.properties found.
+61   DEBUG [2016-03-18 15:24:37]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+63   DEBUG [2016-03-18 15:24:37]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+74   DEBUG [2016-03-18 15:24:37]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+76   DEBUG [2016-03-18 15:24:37]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+79   DEBUG [2016-03-18 15:24:37]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+86   DEBUG [2016-03-18 15:24:37]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+89   DEBUG [2016-03-18 15:24:37]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+131  DEBUG [2016-03-18 15:24:37]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+499  WARN  [2016-03-18 15:24:38]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-18 20:01:37]  No local configuration file unitils-local.properties found.
+41   DEBUG [2016-03-18 20:01:37]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+42   DEBUG [2016-03-18 20:01:37]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+55   DEBUG [2016-03-18 20:01:37]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+58   DEBUG [2016-03-18 20:01:37]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+60   DEBUG [2016-03-18 20:01:37]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+71   DEBUG [2016-03-18 20:01:37]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+73   DEBUG [2016-03-18 20:01:37]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+131  DEBUG [2016-03-18 20:01:37]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+576  WARN  [2016-03-18 20:01:37]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$3e78f1df. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-19 10:01:33]  No local configuration file unitils-local.properties found.
+62   DEBUG [2016-03-19 10:01:33]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+64   DEBUG [2016-03-19 10:01:33]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+73   DEBUG [2016-03-19 10:01:33]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+76   DEBUG [2016-03-19 10:01:33]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+78   DEBUG [2016-03-19 10:01:33]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+86   DEBUG [2016-03-19 10:01:33]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+88   DEBUG [2016-03-19 10:01:33]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+128  DEBUG [2016-03-19 10:01:33]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+517  WARN  [2016-03-19 10:01:34]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5923ddeb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-19 15:16:18]  No local configuration file unitils-local.properties found.
+42   DEBUG [2016-03-19 15:16:19]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+43   DEBUG [2016-03-19 15:16:19]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+54   DEBUG [2016-03-19 15:16:19]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+57   DEBUG [2016-03-19 15:16:19]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+59   DEBUG [2016-03-19 15:16:19]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+66   DEBUG [2016-03-19 15:16:19]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+69   DEBUG [2016-03-19 15:16:19]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+111  DEBUG [2016-03-19 15:16:19]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+536  WARN  [2016-03-19 15:16:19]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-19 17:18:03]  No local configuration file unitils-local.properties found.
+38   DEBUG [2016-03-19 17:18:03]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+39   DEBUG [2016-03-19 17:18:03]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+50   DEBUG [2016-03-19 17:18:03]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+51   DEBUG [2016-03-19 17:18:03]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+53   DEBUG [2016-03-19 17:18:03]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+58   DEBUG [2016-03-19 17:18:03]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+60   DEBUG [2016-03-19 17:18:03]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+106  DEBUG [2016-03-19 17:18:03]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+617  WARN  [2016-03-19 17:18:04]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$5923ddeb. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-21 11:05:53]  No local configuration file unitils-local.properties found.
+45   DEBUG [2016-03-21 11:05:53]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+47   DEBUG [2016-03-21 11:05:53]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+57   DEBUG [2016-03-21 11:05:53]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+59   DEBUG [2016-03-21 11:05:53]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+62   DEBUG [2016-03-21 11:05:53]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+70   DEBUG [2016-03-21 11:05:53]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+72   DEBUG [2016-03-21 11:05:53]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+110  DEBUG [2016-03-21 11:05:53]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+472  WARN  [2016-03-21 11:05:53]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-21 15:22:30]  No local configuration file unitils-local.properties found.
+40   DEBUG [2016-03-21 15:22:30]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+41   DEBUG [2016-03-21 15:22:30]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+52   DEBUG [2016-03-21 15:22:30]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+55   DEBUG [2016-03-21 15:22:30]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+58   DEBUG [2016-03-21 15:22:30]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+65   DEBUG [2016-03-21 15:22:30]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+68   DEBUG [2016-03-21 15:22:30]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+114  DEBUG [2016-03-21 15:22:30]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+530  WARN  [2016-03-21 15:22:31]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$4f28835b. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-28 09:37:29]  No local configuration file unitils-local.properties found.
+373  DEBUG [2016-03-28 09:37:30]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+375  DEBUG [2016-03-28 09:37:30]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+396  DEBUG [2016-03-28 09:37:30]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+399  DEBUG [2016-03-28 09:37:30]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+402  DEBUG [2016-03-28 09:37:30]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+412  DEBUG [2016-03-28 09:37:30]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+417  DEBUG [2016-03-28 09:37:30]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+470  DEBUG [2016-03-28 09:37:30]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    INFO  [2016-03-28 09:46:30]  No local configuration file unitils-local.properties found.
+55   DEBUG [2016-03-28 09:46:30]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+56   DEBUG [2016-03-28 09:46:30]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+142  DEBUG [2016-03-28 09:46:31]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+145  DEBUG [2016-03-28 09:46:31]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+147  DEBUG [2016-03-28 09:46:31]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+174  DEBUG [2016-03-28 09:46:31]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+190  DEBUG [2016-03-28 09:46:31]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+258  DEBUG [2016-03-28 09:46:31]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    INFO  [2016-03-28 09:54:16]  No local configuration file unitils-local.properties found.
+32   DEBUG [2016-03-28 09:54:16]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+33   DEBUG [2016-03-28 09:54:16]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+45   DEBUG [2016-03-28 09:54:16]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+47   DEBUG [2016-03-28 09:54:16]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+50   DEBUG [2016-03-28 09:54:16]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+58   DEBUG [2016-03-28 09:54:16]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+61   DEBUG [2016-03-28 09:54:16]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+89   DEBUG [2016-03-28 09:54:16]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+465  INFO  [2016-03-28 09:54:16]  
+
+No invocations observed.
+
+0    INFO  [2016-03-28 09:54:47]  No local configuration file unitils-local.properties found.
+32   DEBUG [2016-03-28 09:54:47]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+33   DEBUG [2016-03-28 09:54:47]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+54   DEBUG [2016-03-28 09:54:47]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+57   DEBUG [2016-03-28 09:54:47]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+60   DEBUG [2016-03-28 09:54:47]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+69   DEBUG [2016-03-28 09:54:47]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+75   DEBUG [2016-03-28 09:54:47]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+107  DEBUG [2016-03-28 09:54:47]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    INFO  [2016-03-28 09:57:00]  No local configuration file unitils-local.properties found.
+30   DEBUG [2016-03-28 09:57:00]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+31   DEBUG [2016-03-28 09:57:00]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+42   DEBUG [2016-03-28 09:57:00]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+46   DEBUG [2016-03-28 09:57:00]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+48   DEBUG [2016-03-28 09:57:00]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+57   DEBUG [2016-03-28 09:57:00]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+60   DEBUG [2016-03-28 09:57:00]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+98   DEBUG [2016-03-28 09:57:00]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    INFO  [2016-03-28 10:32:05]  No local configuration file unitils-local.properties found.
+40   DEBUG [2016-03-28 10:32:05]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+41   DEBUG [2016-03-28 10:32:05]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+56   DEBUG [2016-03-28 10:32:05]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+59   DEBUG [2016-03-28 10:32:05]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+116  DEBUG [2016-03-28 10:32:05]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+164  DEBUG [2016-03-28 10:32:05]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+168  DEBUG [2016-03-28 10:32:05]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+254  DEBUG [2016-03-28 10:32:05]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+0    INFO  [2016-03-28 10:44:34]  No local configuration file unitils-local.properties found.
+37   DEBUG [2016-03-28 10:44:34]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+38   DEBUG [2016-03-28 10:44:34]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+48   DEBUG [2016-03-28 10:44:34]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+51   DEBUG [2016-03-28 10:44:34]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+56   DEBUG [2016-03-28 10:44:34]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+63   DEBUG [2016-03-28 10:44:34]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+66   DEBUG [2016-03-28 10:44:34]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+117  DEBUG [2016-03-28 10:44:35]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+612  WARN  [2016-03-28 10:44:35]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$58ad38a8. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-03-30 09:28:12]  No local configuration file unitils-local.properties found.
+45   DEBUG [2016-03-30 09:28:12]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+45   DEBUG [2016-03-30 09:28:12]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+54   DEBUG [2016-03-30 09:28:13]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+56   DEBUG [2016-03-30 09:28:13]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+59   DEBUG [2016-03-30 09:28:13]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+66   DEBUG [2016-03-30 09:28:13]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+68   DEBUG [2016-03-30 09:28:13]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+104  DEBUG [2016-03-30 09:28:13]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+632  WARN  [2016-03-30 09:28:13]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$58ad38a8. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-04-06 15:24:10]  No local configuration file unitils-local.properties found.
+66   DEBUG [2016-04-06 15:24:10]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+67   DEBUG [2016-04-06 15:24:10]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+76   DEBUG [2016-04-06 15:24:10]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+78   DEBUG [2016-04-06 15:24:10]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+80   DEBUG [2016-04-06 15:24:10]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+87   DEBUG [2016-04-06 15:24:10]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+90   DEBUG [2016-04-06 15:24:10]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+125  DEBUG [2016-04-06 15:24:10]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+597  WARN  [2016-04-06 15:24:10]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$826bab. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-04-06 16:22:13]  No local configuration file unitils-local.properties found.
+58   DEBUG [2016-04-06 16:22:13]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+59   DEBUG [2016-04-06 16:22:13]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+71   DEBUG [2016-04-06 16:22:13]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+74   DEBUG [2016-04-06 16:22:13]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+76   DEBUG [2016-04-06 16:22:13]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+89   DEBUG [2016-04-06 16:22:13]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+92   DEBUG [2016-04-06 16:22:13]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+146  DEBUG [2016-04-06 16:22:13]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+1067 WARN  [2016-04-06 16:22:14]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$58ad38a8. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.
+0    INFO  [2016-06-27 15:42:20]  No local configuration file unitils-local.properties found.
+36   DEBUG [2016-06-27 15:42:20]  Skipping module easymock. Module class not found in classpath. Module class name: org.unitils.easymock.EasyMockModule
+37   DEBUG [2016-06-27 15:42:20]  Skipping module hibernate. Module class not found in classpath. Module class name: org.unitils.orm.hibernate.HibernateModule
+51   DEBUG [2016-06-27 15:42:20]  Creating instance of interface org.unitils.io.filecontent.FileContentReaderFactory. Implementation class org.unitils.io.filecontent.impl.DefaultFileContentReaderFactory
+53   DEBUG [2016-06-27 15:42:20]  Creating instance of interface org.unitils.io.reader.ReadingStrategyFactory. Implementation class org.unitils.io.reader.impl.FileReadingStrategyFactory
+54   DEBUG [2016-06-27 15:42:20]  Creating instance of interface org.unitils.io.reader.FileResolvingStrategyFactory. Implementation class org.unitils.io.reader.impl.DefaultFileResolvingStrategyFactory
+62   DEBUG [2016-06-27 15:42:20]  Creating instance of interface org.unitils.io.temp.TempServiceFactory. Implementation class org.unitils.io.temp.impl.DefaultTempServiceFactory
+65   DEBUG [2016-06-27 15:42:20]  Skipping module jpa. Module class not found in classpath. Module class name: org.unitils.orm.jpa.JpaModule
+129  DEBUG [2016-06-27 15:42:20]  Creating instance of interface org.unitils.database.transaction.UnitilsTransactionManager. Implementation class org.unitils.database.transaction.impl.DefaultUnitilsTransactionManager
+1960 WARN  [2016-06-27 15:42:22]  Could not create initialized instance of type BigDecimal$$EnhancerByCGLIB$$3ae50383. No no-arg constructor found. All fields in the instance will have the java default values. Add a default constructor (can be private) if the fields should be initialized. If this concerns an innerclass, make sure it is declared static. Partial mocking of non-static innerclasses is not supported.

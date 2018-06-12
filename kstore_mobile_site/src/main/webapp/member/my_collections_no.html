@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>会员中心 - 我的收藏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="telephone=no" name="format-detection">
+  <link rel="stylesheet" href="../css/style.min.css"/>
+  <script src="../js/jquery-1.10.1.js"></script>
+</head>
+<body>
+<div class="bar-top">
+  <a class="bar-item sort_choose active">默认<i class="sharp-down"></i></a>
+  <a class="bar-item">降价优先</a>
+  <a class="bar-item">促销优先</a>
+  <a class="bar-item filter_choose"><i class="screen-icon"></i>筛选</a>
+  <div class="sort-list" style="display:none;">
+    <ul>
+      <li class="selected">默认排序</li>
+      <li>价格从低到高</li>
+      <li>价格从高到低</li>
+      <li>评价最好</li>
+    </ul>
+  </div>
+</div>
+<div class="content">
+  <div class="no_tips">
+    <p>木有收藏商品哦</p>
+  </div>
+</div>
+
+<div class="screen" style="display:none">
+  <div class="screen-header">
+    <a class="back" href="javascript:;"><i class="back-icon"></i></a>
+    筛选
+    <a class="btn sure" href="javascript:;">确定</a>
+  </div>
+  <div class="screen-cont">
+    <div class="lists">
+      <dl>
+        <dd>全部
+          <div class="check-box"></div>
+        </dd>
+        <dd class="selected">有货商品
+          <div class="check-box"></div>
+        </dd>
+        <dd>奢侈品
+          <div class="check-box"></div>
+        </dd>
+        <dd>面部护肤
+          <div class="check-box"></div>
+        </dd>
+        <dd>童车童床
+          <div class="check-box"></div>
+        </dd>
+      </dl>
+      <a class="clearSet" href="javascript:;">清除选项</a>
+    </div>
+  </div>
+</div>
+
+<div class="bar-bottom">
+  <a class="bar-item" href="../home.html"><i class="bar-bottom-i home"></i>首页</a>
+  <a class="bar-item" href="../class.html"><i class="bar-bottom-i class"></i>分类</a>
+  <a class="bar-item" href="../cart.html"><i class="bar-bottom-i cart"></i>购物车</a>
+  <a class="bar-item selected" href="main.html"><i class="bar-bottom-i mine"></i>我的</a>
+</div>
+<script>
+  $(function(){
+
+    /* 排序 */
+    $('.sort_choose').click(function(){
+      if($('.opacity-bg-1').length == 0){
+        $('body').append('<div class="opacity-bg-1"></div>');
+        $('.sort-list').slideDown('fast');
+      }
+    });
+    $('.sort-list li').click(function(){
+      $(this).addClass('selected').siblings().removeClass('selected');
+      $('.opacity-bg-1').remove();
+      $('.sort-list').hide();
+    });
+
+    /* 筛选 */
+    $('.filter_choose').click(function(){
+      if($('.opacity-bg-3').length == 0){
+        $('body').append('<div class="opacity-bg-3"></div>');
+        $('.screen').show();
+      }
+    });
+    $('a.sure').click(function(){
+      $('.opacity-bg-3').remove();
+      $('.screen').hide();
+    });
+
+    /* 滑动显示编辑按钮 */
+    for(var i = 0;i<$('.pro-item').length;i++){
+      var obj = $('.pro-item')[i];
+      var startX = 0;
+      obj.addEventListener('touchstart',function(e){
+        startX = e.targetTouches[0].clientX;
+      },false);
+      obj.addEventListener('touchmove',function(e){
+        var moveX = e.changedTouches[0].clientX - startX;
+        console.log(moveX);
+        if(moveX < 0 && moveX >= -112){
+          this.style.marginLeft = moveX + 'px';
+        }
+        else if((parseInt(this.style.marginLeft) + moveX < 0) && moveX > 0){
+          var oldLeft = parseInt(this.style.marginLeft);
+          this.style.marginLeft = oldLeft + moveX + 'px';
+        }
+      },false);
+      obj.addEventListener('touchend',function(e){
+        if(parseInt(this.style.marginLeft) > -66){
+          this.style.marginLeft = '0';
+        }
+        else{
+          this.style.marginLeft = '-112px';
+        }
+      },false);
+    }
+
+
+  });
+</script>
+</body>
+</html>

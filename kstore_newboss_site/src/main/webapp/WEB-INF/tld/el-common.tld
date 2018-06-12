@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd" version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>el</short-name>
+
+    <!-- 将对象format成json字符串 -->
+    <function>
+        <name>toJsonString</name>
+
+        <function-class>com.ningpai.common.ElFunctions</function-class>
+        <function-signature>String toJsonString(java.lang.Object)</function-signature>
+
+        <description>将对象format成json字符串</description>
+        <example>${el:toJsonString(value)}</example>
+    </function>
+
+    <!-- 将对字符串进行限长度处理 -->
+    <function>
+        <name>limitString</name>
+
+        <function-class>com.ningpai.common.ElFunctions</function-class>
+        <function-signature>String limitString(java.lang.String,int)</function-signature>
+
+        <description>对字符串进行限长处理，长度一旦超过，以省略号显示</description>
+        <example>${el:limitString(value,len)}</example>
+    </function>
+</taglib>
